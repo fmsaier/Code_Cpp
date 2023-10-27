@@ -8,6 +8,10 @@ void Test()
 	d2.Print();
 	d1 += 50;
 	d1.Print();
+	d2 = d1 - 50;
+	d2.Print();
+	d1 -= 50;
+	d1.Print();
 }
 
 int main()

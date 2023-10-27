@@ -61,16 +61,16 @@ Date::~Date()
 // 日期+=天数
 Date& Date::operator+=(int day)
 {
-	/*if (day < 0)
+	if (day < 0)
 	{
 		return *this -= (-day);
-	}*/
+	}
 	_day += day;
 	while (_day > GetMonthDay(_year, _month))
 	{
 		_day -= GetMonthDay(_year, _month);
 		_month++;
-		if (_month >= 12)
+		if (_month > 12)
 		{
 			_year++;
 			_month = 1;
