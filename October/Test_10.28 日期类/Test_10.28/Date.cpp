@@ -115,3 +115,95 @@ Date& Date::operator-=(int day)
 	}
 	return *this;
 }
+
+// 前置++
+Date& Date::operator++()
+{
+	*this += 1;
+	return *this;
+}
+
+// 后置++
+Date Date::operator++(int)
+{
+	Date tmp(*this);
+	*this += 1;
+	return tmp;
+}
+
+// 后置--
+Date Date::operator--(int)
+{
+	Date tmp(*this);
+	*this -= 1;
+	return tmp;
+}
+
+// 前置--
+Date& Date::operator--()
+{
+	*this -= 1;
+	return *this;
+}
+
+// >运算符重载
+bool Date::operator>(const Date& d)
+{
+	if (_year > d._year || (_year == d._year && _month > d._month)
+		|| (_year == d._year && _month == d._month && _day > d._day))
+		return true;
+	return false;
+}
+
+// ==运算符重载
+bool Date::operator==(const Date& d)
+{
+	return _year == d._year && _month == d._month && _day == d._day;
+}
+
+// >=运算符重载
+bool Date::operator >= (const Date& d)
+{
+	return *this > d || *this == d;
+}
+
+// <运算符重载
+bool Date::operator < (const Date& d)
+{
+	return !(*this >= d);
+}
+
+// <=运算符重载
+bool Date::operator <= (const Date& d)
+{
+	return *this < d || *this == d;
+}
+
+// !=运算符重载
+bool Date::operator != (const Date& d)
+{
+	return !(*this == d);
+}
+
+// 日期-日期 返回天数
+int Date::operator-(const Date& d)
+{
+	Date min = *this;
+	Date max = d;
+	Date tmp;
+	int count = 0;
+	int flag = 1;
+	if (*this > d)
+	{
+		tmp = min;
+		min = max;
+		max = tmp;
+		flag = -1;
+	}
+	while (min != max)
+	{
+		++min;
+		++count;
+	}
+	return count * flag;
+}
