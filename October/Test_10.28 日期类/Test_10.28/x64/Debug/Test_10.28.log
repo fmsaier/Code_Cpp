@@ -1,0 +1,7 @@
+﻿  Date.cpp
+D:\GitHub\Code_Cpp\October\Test_10.28 日期类\Test_10.28\Date.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\GitHub\Code_Cpp\October\Test_10.28 日期类\Test_10.28\Date.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Test.cpp
+D:\GitHub\Code_Cpp\October\Test_10.28 日期类\Test_10.28\Date.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  Test_10.28.vcxproj -> D:\GitHub\Code_Cpp\October\Test_10.28 日期类\x64\Debug\Test_10.28.exe

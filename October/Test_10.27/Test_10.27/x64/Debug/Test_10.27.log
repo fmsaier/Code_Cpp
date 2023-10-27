@@ -1,0 +1,5 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\Test_10.27\Test_10.27\inline.h(5,11): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\Test_10.27\Test_10.27\test.cpp(11,11): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\Test_10.27\Test_10.27\test.cpp(15,10): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  Test_10.27.vcxproj -> D:\GitHub\Code_Cpp\Test_10.27\x64\Debug\Test_10.27.exe
