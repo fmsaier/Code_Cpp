@@ -43,7 +43,7 @@ int main()
 		i++;
 	}
 	cout << i;
-
+	size_t a= 1;
 	return 0;
 }
 
