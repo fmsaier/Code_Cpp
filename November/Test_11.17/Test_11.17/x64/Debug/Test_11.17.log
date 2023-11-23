@@ -1,0 +1,5 @@
+﻿  Building.cpp
+  Goodgay.cpp
+  test.cpp
+  正在生成代码...
+D:\GitHub\Code_Cpp\Test_11.17\Test_11.17\Goodgay.cpp : fatal  error C1090: PDB API 调用失败，错误代码“3”: D:\GitHub\Code_Cpp\Test_11.17\Test_11.17\x64\Debug\vc143.pdb
