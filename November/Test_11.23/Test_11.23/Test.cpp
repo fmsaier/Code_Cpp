@@ -371,12 +371,25 @@ using namespace std;
 //    return 0;
 //}
 
-
+int& Test(int& a)
+{
+	static int c = 1;
+	a++;
+	if(c==2)
+	cout << "c:"<< c << endl;
+	return c;
+}
 int main()
 {
-	string s("Hello");
-	char c = s.operator[](1);
-	cout << s << endl;
-	c = 'a';
-	cout << s << endl;
+	int b = 1;
+	int d = Test(b);
+	cout << b << endl;
+	d++;
+	cout << d << endl;
+	cout << Test(b) << endl;
+	int& e = Test(b);
+	e++;
+	++Test(b);
+	cout << e << endl;
+	return 0;
 }

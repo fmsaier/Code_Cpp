@@ -1,5 +1,6 @@
-#include <iostream>
 #define  _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <assert.h>
 using namespace std;
 
 namespace fmsaier
@@ -9,27 +10,25 @@ namespace fmsaier
         friend ostream& operator<<(ostream& _cout, const fmsaier::string& s);
         friend istream& operator>>(istream& _cin, fmsaier::string& s);
 
-    private:
-        char* _str;
-        size_t _capacity;
-        size_t _size;
+   
     public:
         string(const char* str = "")
         {
             _size = strlen(str);
-            _str = new char[_size];
+            _str = new char[_size + 1];
+            strcpy(_str, str);
             _capacity = _size;
         }   
         string(const string& s)
         {
-            _str = new char[s._size];
+            _str = new char[s._size + 1];
             strcpy(_str, s._str);
             _size = s._size;
             _capacity = s._capacity;
         }
         string& operator=(const string& s)
         {
-            _str = new char[s._size];
+            _str = new char[s._size + 1];
             strcpy(_str, s._str);
             _size = s._size;
             _capacity = s._capacity;
@@ -38,6 +37,7 @@ namespace fmsaier
         ~string()
         {
             delete[] _str;
+            _str = nullptr;
             _size = _capacity = 0;
         }
 
@@ -96,11 +96,13 @@ namespace fmsaier
         // access
         char& operator[](size_t index)
         {
+            assert(index <= _size);
             return *(_str + index);
         }
 
         const char& operator[](size_t index)const
 		{
+            assert(index <= _size);
 			return *(_str + index);
 		}
 
@@ -138,6 +140,18 @@ namespace fmsaier
 
         string& erase(size_t pos, size_t len);
 
-    
+         private:
+             char* _str;
+             size_t _capacity;
+             size_t _size;
+             static size_t npos;
+
     };
+    size_t string::npos = -1;
+    void Test_string1()
+    {
+        string s("Hello");
+        char c = s[1];
+        cout << c << endl;
+    }
 };
