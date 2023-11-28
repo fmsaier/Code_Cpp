@@ -381,7 +381,7 @@ int& Test(int& a)
 }
 int main()
 {
-	int b = 1;
+	/*int b = 1;
 	int d = Test(b);
 	cout << b << endl;
 	d++;
@@ -390,6 +390,24 @@ int main()
 	int& e = Test(b);
 	e++;
 	++Test(b);
-	cout << e << endl;
+	cout << e << endl;*/
+	string s("hello");
+	string::iterator it = s.begin();
+	while (it != s.end())
+	{
+		cout << *it << endl;
+		it++;
+	}
+
+	vector<int> v;
+	v.push_back(1);
+	v.push_back(2);
+	vector<int>::iterator vit = v.begin();
+	auto vt = v.rbegin(); 
+	while (vit != v.end())
+	{
+		cout << *vit << endl;
+		vit++;
+	}
 	return 0;
 }
