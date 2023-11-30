@@ -10,36 +10,12 @@ namespace fmsaier
         friend ostream& operator<<(ostream& _cout, const fmsaier::string& s);
         friend istream& operator>>(istream& _cin, fmsaier::string& s);
 
-   
     public:
-        string(const char* str = "")
-        {
-            _size = strlen(str);
-            _str = new char[_size + 1];
-            strcpy(_str, str);
-            _capacity = _size;
-        }   
-        string(const string& s)
-        {
-            _str = new char[s._size + 1];
-            strcpy(_str, s._str);
-            _size = s._size;
-            _capacity = s._capacity;
-        }
-        string& operator=(const string& s)
-        {
-            _str = new char[s._size + 1];
-            strcpy(_str, s._str);
-            _size = s._size;
-            _capacity = s._capacity;
-            return *this;
-        }
-        ~string()
-        {
-            delete[] _str;
-            _str = nullptr;
-            _size = _capacity = 0;
-        }
+        string(const char* str = "");
+        string(const string& s); 
+        string& operator=(const string& s);
+        string& operator=(string s);
+        ~string();
 
         //////////////////////////////////////////////////////////////
         // iterator
@@ -57,11 +33,8 @@ namespace fmsaier
         /////////////////////////////////////////////////////////////
         // modify
         void push_back(char c);
-
         string& operator+=(char c);
-
         void append(const char* str);
-
         string& operator+=(const char* str);
 
         void clear();
@@ -89,7 +62,6 @@ namespace fmsaier
         }
 
         void resize(size_t n, char c = '\0');
-
         void reserve(size_t n);
 
         /////////////////////////////////////////////////////////////
@@ -99,7 +71,6 @@ namespace fmsaier
             assert(index <= _size);
             return *(_str + index);
         }
-
         const char& operator[](size_t index)const
 		{
             assert(index <= _size);
@@ -109,36 +80,44 @@ namespace fmsaier
         /////////////////////////////////////////////////////////////
 
         //relational operators
-
-        bool operator<(const string& s);
-
-        bool operator<=(const string& s);
-
-        bool operator>(const string& s);
-
-        bool operator>=(const string& s);
-
-        bool operator==(const string& s);
-
-        bool operator!=(const string& s);
+        bool operator<(const string& s)
+        {
+            return strcmp(_str, s._str) < 0;
+        }
+        bool operator<=(const string& s)
+        {
+            return strcmp(_str, s._str) <= 0;
+        }
+        bool operator>(const string& s)
+        {
+            return strcmp(_str, s._str) > 0;
+        }
+        bool operator>=(const string& s)
+        {
+            return strcmp(_str, s._str) >= 0;
+        }
+        bool operator==(const string& s)
+        {
+            return strcmp(_str, s._str) == 0;
+        }
+        bool operator!=(const string& s)
+        {
+            return strcmp(_str, s._str) != 0;
+        }
 
         // 返回c在string中第一次出现的位置
-
         size_t find(char c, size_t pos = 0) const;
-
         // 返回子串s在string中第一次出现的位置
-
         size_t find(const char* s, size_t pos = 0) const;
 
         // 在pos位置上插入字符c/字符串str，并返回该字符的位置
-
         string& insert(size_t pos, char c);
 
         string& insert(size_t pos, const char* str);
 
         // 删除pos位置上的元素，并返回该元素的下一个位置
 
-        string& erase(size_t pos, size_t len);
+        string& erase(size_t pos, size_t len = npos);
 
          private:
              char* _str;
@@ -147,11 +126,4 @@ namespace fmsaier
              static size_t npos;
 
     };
-    size_t string::npos = -1;
-    void Test_string1()
-    {
-        string s("Hello");
-        char c = s[1];
-        cout << c << endl;
-    }
 };
