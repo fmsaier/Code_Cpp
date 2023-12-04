@@ -2,4 +2,5 @@
 D:\GitHub\Code_Cpp\November\Test_11.29\Test_11.29\test.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 D:\GitHub\Code_Cpp\November\Test_11.29\Test_11.29\test.cpp(67,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\GitHub\Code_Cpp\November\Test_11.29\Test_11.29\test.cpp(85,19): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\November\Test_11.29\Test_11.29\test.cpp(98,11): warning C4101: “s”: 未引用的局部变量
   Test_11.29.vcxproj -> D:\GitHub\Code_Cpp\November\Test_11.29\x64\Debug\Test_11.29.exe

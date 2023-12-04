@@ -96,7 +96,9 @@ int main()
 	string num1("140");
 	string num2("721");
 	Solution s;
-	string sum(s.multiply(num1, num2));
-	cout << sum << endl;
+	/*string sum(s.multiply(num1, num2));
+	cout << sum << endl;*/
+	int a = 10;
+	printf("%p\n", &a);
 	return 0;
 }
