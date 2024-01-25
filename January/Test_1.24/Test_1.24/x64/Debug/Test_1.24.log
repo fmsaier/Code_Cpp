@@ -1,0 +1,6 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\January\Test_1.24\Test_1.24\test.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\GitHub\Code_Cpp\January\Test_1.24\Test_1.24\test.cpp(82,12): warning C4477: “printf”: 格式字符串“%lld”需要类型“__int64”的参数，但可变参数 1 拥有了类型“int”
+D:\GitHub\Code_Cpp\January\Test_1.24\Test_1.24\test.cpp(82,12): message : 请考虑在格式字符串中使用“%d”
+D:\GitHub\Code_Cpp\January\Test_1.24\Test_1.24\test.cpp(82,12): message : 请考虑在格式字符串中使用“%I32d”
+  Test_1.24.vcxproj -> D:\GitHub\Code_Cpp\January\Test_1.24\x64\Debug\Test_1.24.exe
