@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\January\Test_1.28\Test_1.28\test.cpp(31,15): warning C4101: “j”: 未引用的局部变量
+D:\GitHub\Code_Cpp\January\Test_1.28\Test_1.28\test.cpp(31,12): warning C4101: “i”: 未引用的局部变量
+  Test_1.28.vcxproj -> D:\GitHub\Code_Cpp\January\Test_1.28\x64\Debug\Test_1.28.exe
