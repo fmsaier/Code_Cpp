@@ -1,19 +1,25 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <assert.h>
-using namespace std;
+using std::ostream;
+using std::istream;
+using std::endl;
+using std::cout;
 
 namespace fmsaier
 {
     class string
     {
-        friend ostream& operator<<(ostream& _cout, const fmsaier::string& s);
-        friend istream& operator>>(istream& _cin, fmsaier::string& s);
+    private:
+        char* _str = nullptr;
+        size_t _capacity = 0;
+        size_t _size = 0;
+        static size_t npos;
 
     public:
         string(const char* str = "");
         string(const string& s); 
-        string& operator=(const string& s);
+        //string& operator=(const string& s);
         string& operator=(string s);
         ~string();
 
@@ -21,7 +27,12 @@ namespace fmsaier
         // iterator
     public:
         typedef char* iterator;
+        typedef const char* const_iterator;
         iterator begin()
+        {
+            return _str;
+        }
+        const_iterator begin() const
         {
             return _str;
         }
@@ -29,7 +40,10 @@ namespace fmsaier
         {
             return _str + _size;
         }
-
+        const_iterator end() const
+        {
+            return _str + _size;
+        }
         /////////////////////////////////////////////////////////////
         // modify
         void push_back(char c);
@@ -119,11 +133,7 @@ namespace fmsaier
 
         string& erase(size_t pos, size_t len = npos);
 
-         private:
-             char* _str;
-             size_t _capacity;
-             size_t _size;
-             static size_t npos;
-
+        friend ostream& operator<<(ostream& _cout, const fmsaier::string& s);
+        friend istream& operator>>(istream& _cin, fmsaier::string& s);
     };
 };

@@ -1,5 +1,5 @@
 #include "string.h"
-#include <string>
+//#include <string>
 namespace fmsaier
 {
     size_t string::npos = -1;
@@ -22,18 +22,20 @@ namespace fmsaier
     //写法二
     string::string(const string& s)
     {
+        //_str = nullptr;
+        //_capacity = _size = 0;
         string tmp(s._str);
         swap(tmp);
     }
     //写法一
-    string& string::operator=(const string& s)
+    /*string& string::operator=(const string& s)
     {
         _str = new char[s._size + 1];
         strcpy(_str, s._str);
         _size = s._size;
         _capacity = s._capacity;
         return *this;
-    }
+    }*/
     //写法二
     string& string::operator=(string s)
     {
@@ -42,6 +44,7 @@ namespace fmsaier
     }
     string::~string()
     {
+        //if(_str != nullptr)
         delete[] _str;
         _str = nullptr;
         _size = _capacity = 0;
@@ -88,7 +91,9 @@ namespace fmsaier
     }
     void string::swap(string& s)
     {
-        std::swap(*this, s);
+        std::swap(_str,s._str);
+        std::swap(_size, s._size);
+        std::swap(_capacity, s._capacity);
     }
     void string::resize(size_t n, char c)
     {
@@ -192,5 +197,6 @@ namespace fmsaier
             strcpy(_str + pos, _str + pos + len);
             _size -= len;
         }
+        return *this;
     }
 }

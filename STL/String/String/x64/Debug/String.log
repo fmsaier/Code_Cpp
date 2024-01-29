@@ -1,4 +1,9 @@
 ﻿  string.cpp
+D:\GitHub\Code_Cpp\STL\String\String\string.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 D:\GitHub\Code_Cpp\STL\String\String\string.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\GitHub\Code_Cpp\STL\String\String\string.cpp(114,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\STL\String\String\string.cpp(133,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\STL\String\String\string.cpp(178,17): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  test.cpp
+D:\GitHub\Code_Cpp\STL\String\String\string.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
   String.vcxproj -> D:\GitHub\Code_Cpp\STL\String\x64\Debug\String.exe

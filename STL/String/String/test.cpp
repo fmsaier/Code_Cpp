@@ -40,7 +40,6 @@ void Test_string4()
 {
     fmsaier::string s1("Hello");
     fmsaier::string s2;
-    s2 = s1;
     //s1 += 'a';
     cout << s2.find(s1.c_str()) << endl;
 }
@@ -49,9 +48,12 @@ void Test_string5()
     fmsaier::string s1("Hello");
     s1.insert(0, 'a');
     cout << s1.c_str() << endl;
+    fmsaier::string s(s1);
+    s = s1;
 }
 int main()
 {
+    int a = 0;
 	Test_string5();
 	return 0;
 }
