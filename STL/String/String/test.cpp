@@ -54,6 +54,7 @@ void Test_string5()
 int main()
 {
     int a = 0;
-	Test_string5();
+    int b = int();
+	//Test_string5();
 	return 0;
 }
