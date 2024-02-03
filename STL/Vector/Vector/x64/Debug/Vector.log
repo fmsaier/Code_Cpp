@@ -1,0 +1,6 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\STL\Vector\Vector\vector.h(85,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\STL\Vector\Vector\vector.h(81,8): message : 在编译 类 模板 成员函数“void fmsaier::vector<int>::reserve(size_t)”时
+D:\GitHub\Code_Cpp\STL\Vector\Vector\test.cpp(9,11): message : 请参阅 "Test1" 中对 "fmsaier::vector<int>::reserve" 的第一个引用
+D:\GitHub\Code_Cpp\STL\Vector\Vector\test.cpp(6,14): message : 查看对正在编译的 类 模板 实例化“fmsaier::vector<int>”的引用
+  Vector.vcxproj -> D:\GitHub\Code_Cpp\STL\Vector\x64\Debug\Vector.exe

@@ -67,27 +67,60 @@
 #include "vector.h"
 #include <list>
 #include <vector>
+//int main()
+//{
+//	int a[] = { 100,111,222 };
+//	bit::vector<int> v(a,a+3);
+//	//bit::vector<>::iterator
+//	list<int> lt;
+//	lt.push_back(100);
+//	lt.push_back(200);
+//	lt.push_back(300);
+//	lt.push_back(400);
+//	reverse(lt.begin(), lt.end());
+//	lt.reverse();
+//	for (auto& i : lt)
+//	{
+//		cout << i << " ";
+//	}
+//	//bit::vector<int> v1(lt.begin(), lt.end());
+//	std::vector<int> v2(3,5);
+//	bit::vector<int> v1(v2.begin(), v2.end());
+//	for (auto& i : v)
+//	{
+//		cout << i;
+//	}
+//	return 0;
+//}
+
 int main()
+
 {
-	int a[] = { 100,111,222 };
-	bit::vector<int> v(a,a+3);
-	list<int> lt;
-	lt.push_back(100);
-	lt.push_back(200);
-	lt.push_back(300);
-	lt.push_back(400);
-	reverse(lt.begin(), lt.end());
-	lt.reverse();
-	for (auto& i : lt)
+
+	int ar[] = { 1,2,3,4,0,5,6,7,8,9 };
+
+	int n = sizeof(ar) / sizeof(int);
+
+	vector<int> v(ar, ar + n);
+
+	vector<int>::iterator it = v.begin();
+
+	while (it != v.end())
+
 	{
-		cout << i << " ";
+
+		if (*it != 0)
+
+			cout << *it;
+
+		else
+
+			v.erase(it);
+
+		it++;
+
 	}
-	//bit::vector<int> v1(lt.begin(), lt.end());
-	std::vector<int> v2(3,5);
-	bit::vector<int> v1(v2.begin(), v2.end());
-	for (auto& i : v)
-	{
-		cout << i;
-	}
+
 	return 0;
+
 }
