@@ -113,43 +113,55 @@ using namespace std;
 
 
 
-void ToTwo(int a, vector<int>& v)
-{
-	int b = 0;
-	int c = 0;
-	while (a > 1)
-	{
-		b = a / 2;
-		c = a - b * 2;
-		a = b;
-		v.push_back(c);
-	}
-	v.push_back(a);
-}
-int main()
-{
-	int a;
-	cin >> a;
-	vector<int> v;
-	int count = 0;
-	int sum = 0;
-	ToTwo(a, v);
-	for (int i : v)
-	{
-		if (i == 1)
-		{
-			count++;
-		}
-		if (i == 0)
-		{
-			if(count >= sum)
-				sum = count;
-			count = 0;
-		}
-	}
-	if (count >= sum)
-		sum = count;
-	cout << sum;
-}
+//void ToTwo(int a, vector<int>& v)
+//{
+//	int b = 0;
+//	int c = 0;
+//	while (a > 1)
+//	{
+//		b = a / 2;
+//		c = a - b * 2;
+//		a = b;
+//		v.push_back(c);
+//	}
+//	v.push_back(a);
+//}
+//int main()
+//{
+//	int a;
+//	cin >> a;
+//	vector<int> v;
+//	int count = 0;
+//	int sum = 0;
+//	ToTwo(a, v);
+//	for (int i : v)
+//	{
+//		if (i == 1)
+//		{
+//			count++;
+//		}
+//		if (i == 0)
+//		{
+//			if(count >= sum)
+//				sum = count;
+//			count = 0;
+//		}
+//	}
+//	if (count >= sum)
+//		sum = count;
+//	cout << sum;
+//}
 
 // 64 位输出请用 printf("%lld")
+
+
+
+int main()
+{
+	const int a = 10;
+	int* p = (int*) & a;
+	*p = 20;
+	cout << a << " ";
+	cout << *p << " ";
+	return 0;
+}
