@@ -60,6 +60,13 @@
 #include <vector>
 using namespace std;
 
+class Test
+{
+public:
+    const static int i = 5;
+};
+//int Test::i = 0;
+
 int main() 
 {
     int a, b;
