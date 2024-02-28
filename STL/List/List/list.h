@@ -1,5 +1,6 @@
 #pragma once
-#include<iostream>
+#include <iostream>
+#include "ReverseIterator.h"
 using namespace std;
 
 namespace fmsaier
@@ -32,29 +33,35 @@ namespace fmsaier
         ListIterator(const Self& l)
             :_pNode(l._pNode)
         {}
-        T& operator*()
+        Ref operator*() 
         {
-
+            return _pNode->_val;
         }
-        T* operator->()
+        Ptr operator->()
         {
-
+            return &(_pNode->_val);
         }
         Self& operator++()
         {
-
+            _pNode = _pNode->_pNext;
+            return *this;
         }
         Self operator++(int)
         {
-
+            Self tmp = *this;
+            _pNode = _pNode->_pNext;
+            return tmp;
         }
         Self& operator--()
         {
-
+            _pNode = _pNode->_pPre;
+            return *this;
         }
         Self& operator--(int)
         {
-
+            Self tmp = *this;
+            _pNode = _pNode->_pPre;
+            return tmp;
         }
         bool operator!=(const Self& l)
         {
@@ -76,7 +83,9 @@ namespace fmsaier
         typedef Node* PNode;
     public:
         typedef ListIterator<T, T&, T*> iterator;
-        typedef ListIterator<T, const T&, const T&> const_iterator;
+        typedef ListIterator<T, const T&, const T*> const_iterator;
+        typedef Reverse_iterator<iterator, T&, T*> reverse_iterator;
+        typedef Reverse_iterator<const_iterator, const T&, const T*> const_reverse_iterator;
     public:
         ///////////////////////////////////////////////////////////////
         // List的构造
@@ -86,6 +95,7 @@ namespace fmsaier
         }
         list(int n, const T& value = T())
         {
+            _pHead = new Node();
             while (n--)
             {
                 push_back(value);
@@ -94,10 +104,16 @@ namespace fmsaier
         template <class Iterator>
         list(Iterator first, Iterator last)
         {
-
+            _pHead = new Node();
+            Iterator cur = first;
+            while (cur != last)
+            {
+                push_back(*cur);
+            }
         }
         list(const list<T>& l)
         {
+            _pHead = new Node();
             PNode cur = l._pHead->_pNext;
             while (cur != l._pHead)
             {
@@ -112,8 +128,8 @@ namespace fmsaier
         }
         ~list()
         {
-            PNode cur = l._pHead->_pNext;
-            while (cur != l._pHead)
+            PNode cur = _pHead->_pNext;
+            while (cur != _pHead)
             {
                 pop_back();
                 cur = cur->_pNext;
@@ -139,7 +155,22 @@ namespace fmsaier
         {
             return _pHead;
         }
-
+        reverse_iterator rbegin()
+        {
+            return (end());
+        }
+        reverse_iterator rend()
+        {
+            return (begin());
+        }
+        const_reverse_iterator crbegin() const
+        {
+            return (end());
+        }
+        const_reverse_iterator crend() const
+        {
+            return (begin());
+        }
         ///////////////////////////////////////////////////////////////
         // List Capacity
         size_t size()const
@@ -149,6 +180,7 @@ namespace fmsaier
             while (cur != _pHead)
             {
                 count++;
+                cur = cur->_pNext;
             }
             return count;
         }
@@ -214,21 +246,29 @@ namespace fmsaier
         // 删除pos位置的节点，返回该节点的下一个位置
         iterator erase(iterator pos)
         {
-
+            PNode cur = _pHead->_pNext;
+            while (pos != cur)
+            {
+                cur = cur->_pNext;
+            }
+            PNode pre = cur->_pPre;
+            pre->_pNext = cur->_pNext;
+            cur->_pNext->_pPre = pre;
+            delete cur;
+            return pre->_pNext;
         }
         void clear()
         {
-
+            while (!empty())
+            {
+                pop_back();
+            }
         }
         void swap(list<T>& l)
         {
             std::swap(_pHead, l._pHead);
         }
     private:
-        void CreateHead()
-        {
-
-        }
 
         PNode _pHead;
     };
