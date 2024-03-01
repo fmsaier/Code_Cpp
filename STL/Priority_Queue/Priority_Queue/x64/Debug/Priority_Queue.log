@@ -1,0 +1,25 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\STL\Priority_Queue\Priority_Queue\priority_queue.h(61,31): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“test.cpp”)
+  D:\GitHub\Code_Cpp\STL\Priority_Queue\Priority_Queue\priority_queue.h(61,31):
+  模板实例化上下文(最早的实例化上下文)为
+  	D:\GitHub\Code_Cpp\STL\Priority_Queue\Priority_Queue\test.cpp(5,31):
+  	查看对正在编译的 类 模板 实例化“fmsaier::priority_queue<int,std::vector<T,std::allocator<T>>,fmsaier::less<T>>”的引用
+          with
+          [
+              T=int
+          ]
+  	D:\GitHub\Code_Cpp\STL\Priority_Queue\Priority_Queue\priority_queue.h(58,14):
+  	在编译 类 模板 成员函数“void fmsaier::priority_queue<int,std::vector<T,std::allocator<T>>,fmsaier::less<T>>::push(const T &)”时
+          with
+          [
+              T=int
+          ]
+  		D:\GitHub\Code_Cpp\STL\Priority_Queue\Priority_Queue\test.cpp(6,9):
+  		请参阅 "Test1" 中对 "fmsaier::priority_queue<int,std::vector<T,std::allocator<T>>,fmsaier::less<T>>::push" 的第一个引用
+          with
+          [
+              T=int
+          ]
+  
+  Priority_Queue.vcxproj -> D:\GitHub\Code_Cpp\STL\Priority_Queue\x64\Debug\Priority_Queue.exe

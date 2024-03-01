@@ -10,15 +10,39 @@ namespace fmsaier
     template<class T>
     class less
     {
-
+    public:
+        bool operator()(const T& a, const T& b)
+        {
+            return a < b;
+        }
+    };
+    template<class T>
+    class less<T*>
+    {
+        bool operator()(const T* const & a, const T* const & b)
+        {
+            return *a < *b;
+        }
     };
 
     template <class T, class Container = vector<T>, class Compare = less<T> >
     class priority_queue
     {
     public:
+        priority_queue()
+            :c()
+        {}
         template <class InputIterator>
-        priority_queue(InputIterator first, InputIterator last);
+        priority_queue(InputIterator first, InputIterator last)
+        {
+            InputIterator cur = first;
+            while (cur != last)
+            {
+                push(*cur);
+                cur++;
+            }
+
+        }
         bool empty() const
         {
             return c.empty();
@@ -27,7 +51,7 @@ namespace fmsaier
         {
             return c.size();
         }
-        T& top() const
+        const T& top() const
         {
             return c[0];
         }
@@ -39,7 +63,7 @@ namespace fmsaier
         void pop()
         {
             swap(c[0], c[c.size() - 1]);
-            c.pop_back(x);
+            c.pop_back();
             AdjustDown(0);
         }
 
@@ -48,13 +72,13 @@ namespace fmsaier
         {
             int parent = (child - 1) / 2;
             while (child > 0)
-            {
-                if (c[child] > c[parent])
-                {
-                    swap(c[child], c[parent]);
-                    child = parent;
-                    parent = (child - 1) / 2;
-                }
+			{
+				if (comp(c[parent], c[child]))
+				{
+					swap(c[child], c[parent]);
+					child = parent;
+					parent = (child - 1) / 2;
+				}
                 else
                 {
                     break;
@@ -70,7 +94,7 @@ namespace fmsaier
                 {
                     child--;
                 }
-                if (c[child] > c[parent])
+                if (comp(c[parent], c[child]))
                 {
                     swap(c[child], c[parent]);
                     parent = child;
@@ -81,8 +105,6 @@ namespace fmsaier
                     break;
                 }
             }
- 
-            
         }
         Container c;
         Compare comp;
