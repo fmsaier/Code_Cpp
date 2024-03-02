@@ -71,64 +71,93 @@
 //    return 0;
 //}
 
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-
-using namespace std;
+//#include <iostream>
+//#include <vector>
+//#include <list>
+//#include <deque>
+//
+//using namespace std;
+//
+//
+//
+//class Solution {
+//public:
+//    void duplicateZeros(vector<int>& arr) {
+//        int count = 0;
+//        int dest = arr.size() - 1;
+//        int cur = 0;
+//        while (count < arr.size())
+//        {
+//            if (arr[cur] == 0)
+//            {
+//                count++;
+//            }
+//            count++;
+//            if (count >= arr.size())
+//                break;
+//            cur++;
+//        }
+//        //cout << cur <<endl;
+//        if (arr[cur] == 0 && count > arr.size())
+//        {
+//            arr[arr.size() - 1] = 0;
+//        }
+//        //if(arr[--cur] == 0)
+//        //    cur--;
+//        while (cur >= 0)
+//        {
+//            if (arr[cur] == 0 && count == arr.size())
+//            {
+//                arr[dest--] = 0;
+//            }
+//            count > arr.size() ? count = arr.size() : 0;
+//            arr[dest--] = arr[cur--];
+//        }
+//        
+//    }
+//};
+//int main()
+//{
+//	/*deque<int> cont = { 1, 2, 3, 4, 5 };
+//	deque<int>::iterator iter, tempIt;
+//	for (iter = cont.begin(); iter != cont.end();)
+//	{
+//		tempIt = iter;
+//		++iter;
+//		cont.erase(tempIt);
+//	}*/
+//    Solution s;
+//    vector<int> v = { 1,0,2,3,0,4,5,0 };
+//    // 8 4 5 0 0 0 0 0
+//    s.duplicateZeros(v);
+//    return 0;
+//}
 
 
 
 class Solution {
+private:
+    int Sum(int num)
+    {
+        int sum = 0;
+        while (num)
+        {
+            int tmp = num % 10;
+            num /= 10;
+            sum += tmp * tmp;
+        }
+        return sum;
+    }
 public:
-    void duplicateZeros(vector<int>& arr) {
-        int count = 0;
-        int dest = arr.size() - 1;
-        int cur = 0;
-        while (count < arr.size())
+    bool isHappy(int n) 
+    {
+        int slow = Sum(n);
+        int fast = Sum(Sum(n));
+        while (slow != fast)
         {
-            if (arr[cur] == 0)
-            {
-                count++;
-            }
-            count++;
-            if (count >= arr.size())
-                break;
-            cur++;
+            slow = Sum(slow);
+            fast = Sum(Sum(fast));
         }
-        //cout << cur <<endl;
-        if (arr[cur] == 0 && count > arr.size())
-        {
-            arr[arr.size() - 1] = 0;
-        }
-        //if(arr[--cur] == 0)
-        //    cur--;
-        while (cur >= 0)
-        {
-            if (arr[cur] == 0 && count == arr.size())
-            {
-                arr[dest--] = 0;
-            }
-            count > arr.size() ? count = arr.size() : 0;
-            arr[dest--] = arr[cur--];
-        }
-        
+        return slow == 1;
     }
 };
-int main()
-{
-	/*deque<int> cont = { 1, 2, 3, 4, 5 };
-	deque<int>::iterator iter, tempIt;
-	for (iter = cont.begin(); iter != cont.end();)
-	{
-		tempIt = iter;
-		++iter;
-		cont.erase(tempIt);
-	}*/
-    Solution s;
-    vector<int> v = { 1,0,2,3,0,4,5,0 };
-    // 8 4 5 0 0 0 0 0
-    s.duplicateZeros(v);
-    return 0;
-}

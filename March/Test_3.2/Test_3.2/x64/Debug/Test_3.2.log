@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\March\Test_3.2\Test_3.2\test.cpp(221,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\GitHub\Code_Cpp\March\Test_3.2\Test_3.2\test.cpp(222,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Test_3.2.vcxproj -> D:\GitHub\Code_Cpp\March\Test_3.2\x64\Debug\Test_3.2.exe
