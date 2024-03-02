@@ -210,65 +210,84 @@ using namespace std;
 //};
 
 
+////三数之和
+//class Solution {
+//public:
+//    vector<vector<int>> threeSum(vector<int>& nums)
+//    {
+//        sort(nums.begin(), nums.end());
+//        vector<vector<int>> v;
+//        int a = 0;
+//        int b = nums.size() - 2;
+//        int c = nums.size() - 1;
+//        while (c > 1)
+//        {
+//            if (c != nums.size() - 1 && nums[c] == nums[c + 1])
+//            {
+//                c--;
+//                a = 0;
+//                b = c - 1;
+//                continue;
+//            }
+//              
+//            while (a < b)
+//            {
+// 
+//                if (nums[a] + nums[b] > -nums[c])
+//                {
+//                    b--;
+//                }
+//                else if (nums[a] + nums[b] < -nums[c])
+//                {
+//                    a++;
+//                }
+//                else
+//                {
+//                    vector<int> tmp = { nums[a], nums[b], nums[c] };
+//                    if (!v.empty() && v[v.size() - 1] == tmp)
+//                    {
+//                        b--;
+//                        continue;
+//                    }
+//                    v.push_back({ nums[a] , nums[b] , nums[c] });
+//                    b--;
+//                }
+//            }
+//            c--;
+//            a = 0;
+//            b = c - 1;
+//        }
+//        //if (v.size() < 2)
+//        //    return v;
+//        //sort(v.begin(), v.end());
+//        //vector<vector<int>>::iterator it = v.begin();
+//        //while (it + 1 != v.end())
+//        //{
+//        //    if (*it == *(it + 1))
+//        //    {
+//        //        it = v.erase(it);
+//        //        continue;
+//        //    }
+//        //    it++;
+//        //}
+//        return v;
+//    }
+//};
+//
+//int main()
+//{
+//    Solution s;
+//    vector<int> v = { -2,0,0,2,2 };
+//    s.threeSum(v);
+//    return 0;
+//}
 
+
+//四数之和
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) 
+    vector<vector<int>> fourSum(vector<int>& nums, int target) 
     {
-        sort(nums.begin(), nums.end());
-        vector<vector<int>> v;
-        int a = 0;
-        int b = nums.size() - 2;
-        int c = nums.size() - 1;
-        while (c > 1)
-        {
-            while (a < b)
-            {
-                if (nums[a] + nums[b] > -nums[c])
-                {
-                    b--;
-                }
-                else if (nums[a] + nums[b] < -nums[c])
-                {
-                    a++;
-                }
-                else
-                {
-                    vector<int> tmp = { nums[a], nums[b], nums[c] };
-                    if (!v.empty() && v[v.size() - 1] == tmp)
-                    {
-                        b--;
-                        continue;
-                    }
-                    v.push_back({ nums[a] , nums[b] , nums[c] });
-                    b--;
-                }
-            }
-            c--;
-            a = 0;
-            b = c - 1;
-        }
-        //if (v.size() < 2)
-        //    return v;
-        //sort(v.begin(), v.end());
-        //vector<vector<int>>::iterator it = v.begin();
-        //while (it + 1 != v.end())
-        //{
-        //    if (*it == *(it + 1))
-        //    {
-        //        it = v.erase(it);
-        //        continue;
-        //    }
-        //    it++;
-        //}
-        return v;
+
     }
 };
-
-int main()
-{
-    Solution s;
-    vector<int> v = { -1,0,1,2,-1,-4 };
-    s.threeSum(v);
-    return 0;
-}
