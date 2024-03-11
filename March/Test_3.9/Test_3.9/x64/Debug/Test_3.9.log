@@ -1,5 +1,3 @@
 ﻿  test.cpp
 D:\GitHub\Code_Cpp\March\Test_3.9\Test_3.9\test.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\GitHub\Code_Cpp\March\Test_3.9\Test_3.9\test.cpp(29,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\GitHub\Code_Cpp\March\Test_3.9\Test_3.9\test.cpp(32,25): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   Test_3.9.vcxproj -> D:\GitHub\Code_Cpp\March\Test_3.9\x64\Debug\Test_3.9.exe
