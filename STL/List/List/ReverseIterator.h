@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 namespace fmsaier
 {
 	// 适配器 -- 复用

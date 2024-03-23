@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include "ReverseIterator.h"
 using namespace std;
@@ -211,7 +211,7 @@ namespace fmsaier
 
         ////////////////////////////////////////////////////////////
         // List Modify
-        void push_back(const T& val) 
+        void push_back(const T& val)
         { 
             insert(end(), val); 
         }

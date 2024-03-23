@@ -62,3 +62,20 @@ void Test3()
 //	cout << endl;
 //
 //}
+
+#include "list.h"
+#include <vector>
+
+int main()
+{
+	static int a = 0;
+	//typedef a b;
+	fmsaier::list<int> l(1);
+	//fmsaier::list<int>::const_iterator it = l.begin();
+	//l.push_back(1);
+	//*it++;
+	vector<int> v;
+	vector<int>::const_iterator vit = v.begin();
+	v.push_back(1);
+	return 0;
+}

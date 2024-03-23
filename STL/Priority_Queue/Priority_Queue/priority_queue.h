@@ -19,6 +19,7 @@ namespace fmsaier
     template<class T>
     class less<T*>
     {
+    public:
         bool operator()(const T* const & a, const T* const & b)
         {
             return *a < *b;
