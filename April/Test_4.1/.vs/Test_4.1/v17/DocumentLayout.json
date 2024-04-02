@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\Code_Cpp\\April\\Test_4.1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B1E1915-415E-46C0-980E-F6096547C5E3}|Test_4.1\\Test_4.1.vcxproj|D:\\GitHub\\Code_Cpp\\April\\Test_4.1\\Test_4.1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3B1E1915-415E-46C0-980E-F6096547C5E3}|Test_4.1\\Test_4.1.vcxproj|solutionrelative:Test_4.1\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1350,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\April\\Test_4.1\\Test_4.1\\test.cpp",
+              "RelativeDocumentMoniker": "Test_4.1\\test.cpp",
+              "ToolTip": "D:\\GitHub\\Code_Cpp\\April\\Test_4.1\\Test_4.1\\test.cpp",
+              "RelativeToolTip": "Test_4.1\\test.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAUwIEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-01T10:33:11.397Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

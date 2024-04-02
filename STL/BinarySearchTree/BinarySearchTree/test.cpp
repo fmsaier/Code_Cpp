@@ -37,11 +37,34 @@ void TestBSTree()
 			ret->_value++;
 		}
 	}
+	countTree.Erase("西瓜");
+	countTree.Erase("苹果");
+	countTree.Erase("樱桃");
 	countTree.InOrder();
+}
+
+void TestBSTree1()
+{
+	BSTree<int, int> t;
+	srand(time(NULL));
+	for (int i = 0; i < 10000; i++)
+	{
+		t.Insert(rand() + i, rand() - i);
+	}
+	for (int i = 0; i < 1000; i++)
+	{
+		t.Erase(rand() + i);
+		if (!t.Find(rand() + i))
+		{
+			cout << "error" << endl;
+			break;
+		}
+	}
+	t.InOrder();
 }
 
 int main()
 {
-	TestBSTree();
+	TestBSTree1();
 	return 0;
 }

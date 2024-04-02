@@ -1,2 +1,3 @@
 ﻿  test.cpp
+D:\GitHub\Code_Cpp\STL\BinarySearchTree\BinarySearchTree\test.cpp(49,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   BinarySearchTree.vcxproj -> D:\GitHub\Code_Cpp\STL\BinarySearchTree\x64\Debug\BinarySearchTree.exe
