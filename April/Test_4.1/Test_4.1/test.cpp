@@ -548,56 +548,65 @@ struct TreeNode {
 //    s.topKFrequent(words, 2);
 //    return 0;
 //}
+//
+//class Compare
+//{
+//public:
+//	bool operator()(pair<string, int> p1, pair<string, int> p2)
+//	{
+//		if (p1.second > p2.second)
+//			return true;
+//		return false;
+//	}
+//};
+//vector<pair<string, int>> topKFrequent(vector<string>& words)
+//{
+//	map<string, int> dic;
+//	for (auto& str : words)
+//	{
+//		dic[str]++;
+//	}
+//	Compare com;
+//	vector<pair<string, int>> v(dic.begin(), dic.end());
+//	stable_sort(v.begin(), v.end(), com);
+//	
+//	return v;
+//}
+//
+//#include <iostream>
+//using namespace std;
+//
+//int main() 
+//{
+//    string second;
+//    getline(cin, second);
+//    
+//	vector<string> words;
+//    int begin = 0;
+//    for (int i = 0; i < second.size(); i++)
+//    {
+//        second[i] = tolower(second[i]);
+//        if (second[i] == ' ' || second[i] == '.')
+//        {
+//            string tmp(second.begin()+begin, second.begin() + i);
+//            words.push_back(tmp);
+//            begin = i + 1;
+//        }
+//
+//    }
+//    vector<pair<string, int>> ret = topKFrequent(words);
+//    for (auto& i : ret)
+//    {
+//        cout << i.first << ":" << i.second << endl;
+//    }
+//    return 0;
+//}
 
-class Compare
+
+
+int main()
 {
-public:
-	bool operator()(pair<string, int> p1, pair<string, int> p2)
-	{
-		if (p1.second > p2.second)
-			return true;
-		return false;
-	}
-};
-vector<pair<string, int>> topKFrequent(vector<string>& words)
-{
-	map<string, int> dic;
-	for (auto& str : words)
-	{
-		dic[str]++;
-	}
-	Compare com;
-	vector<pair<string, int>> v(dic.begin(), dic.end());
-	stable_sort(v.begin(), v.end(), com);
-	
-	return v;
-}
-
-#include <iostream>
-using namespace std;
-
-int main() 
-{
-    string second;
-    getline(cin, second);
-    
-	vector<string> words;
-    int begin = 0;
-    for (int i = 0; i < second.size(); i++)
-    {
-        second[i] = tolower(second[i]);
-        if (second[i] == ' ' || second[i] == '.')
-        {
-            string tmp(second.begin()+begin, second.begin() + i);
-            words.push_back(tmp);
-            begin = i + 1;
-        }
-
-    }
-    vector<pair<string, int>> ret = topKFrequent(words);
-    for (auto& i : ret)
-    {
-        cout << i.first << ":" << i.second << endl;
-    }
+    int a;
+    scanf("%d", &a);
     return 0;
 }
