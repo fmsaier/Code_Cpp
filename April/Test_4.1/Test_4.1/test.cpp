@@ -602,11 +602,62 @@ struct TreeNode {
 //    return 0;
 //}
 
+//class A
+//{
+//    int a = 0;
+//public:
+//    virtual void Test() 
+//    {
+//
+//    }
+//};
+//class B final : public A
+//{
+//    int b;
+//
+//public:
+//    B()
+//    {
+//        //a.a = 1;
+//        b = 0;
+//    }
+//    B(const B& b) = default;
+//    virtual void Test() override final
+//    {
+//
+//    }
+//};
 
+template <size_t N>
+void Func()
+{
+    cout << N << endl;
+    Func<N - 1>();
+}
+
+template<>
+void Func<1>()
+{
+    cout << 1 << endl;
+}
+void _Test()
+{
+
+}
+template <class T, class ...Args>
+void _Test(T&& t, Args&& ...args)
+{
+	_Test(args...);
+}
+template <class ...Args>
+void Test(Args&& ...args)
+{
+	_Test(args...);
+}
 
 int main()
 {
-    int a;
-    scanf("%d", &a);
+    Test(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    Func<2000>();
     return 0;
 }

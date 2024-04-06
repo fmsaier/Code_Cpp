@@ -144,9 +144,7 @@ public:
 			}
 			else
 			{
-				int a;
-				cin >> a;
-				//assert(false);
+				assert(false);
 			}
 		}
 		return true;
@@ -158,6 +156,12 @@ public:
 		size_t height = 0;
 		return _IsAVLTree(_pRoot, height);
 	}
+
+	void InOrder()
+	{
+		_InOrder(_pRoot);
+	}
+private:
 	void _InOrder(Node* root)
 	{
 		if (root == nullptr)
@@ -166,11 +170,6 @@ public:
 		cout << root->_data << ":" << root->_bf << endl;
 		_InOrder(root->_pRight);
 	}
-	void InOrder()
-	{
-		_InOrder(_pRoot);
-	}
-private:
 	// 根据AVL树的概念验证pRoot是否为有效的AVL树
 	bool _IsAVLTree(Node* pRoot, size_t& height)
 	{

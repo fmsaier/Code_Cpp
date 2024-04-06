@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\STL\RBTree\RBTree\test.cpp(8,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\GitHub\Code_Cpp\STL\RBTree\RBTree\RBTree.h(196,1): warning C4715: “RBTree<int>::Insert”: 不是所有的控件路径都返回值
+  RBTree.vcxproj -> D:\GitHub\Code_Cpp\STL\RBTree\x64\Debug\RBTree.exe
