@@ -5,6 +5,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{6F037B02-4B07-4AA4-8331-9BE42FE3B365}|Test_4.8\\Test_4.8.vcxproj|D:\\GitHub\\Code_Cpp\\April\\Test_4.8\\Test_4.8\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6F037B02-4B07-4AA4-8331-9BE42FE3B365}|Test_4.8\\Test_4.8.vcxproj|solutionrelative:Test_4.8\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F037B02-4B07-4AA4-8331-9BE42FE3B365}|Test_4.8\\Test_4.8.vcxproj|D:\\VISUAL STUDIO\\VISUAL STUDIO\\VC\\TOOLS\\MSVC\\14.39.33519\\INCLUDE\\VECTOR||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +17,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1350,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vector",
+              "DocumentMoniker": "D:\\Visual Studio\\Visual Studio\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Visual Studio\\Visual Studio\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ToolTip": "D:\\Visual Studio\\Visual Studio\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\Visual Studio\\Visual Studio\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ViewState": "AQIAAFsHAAAAAAAAAAAAwGQHAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-10T13:00:45.659Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -28,7 +44,7 @@
               "RelativeDocumentMoniker": "Test_4.8\\test.cpp",
               "ToolTip": "D:\\GitHub\\Code_Cpp\\April\\Test_4.8\\Test_4.8\\test.cpp",
               "RelativeToolTip": "Test_4.8\\test.cpp",
-              "ViewState": "AQIAAL8AAAAAAAAAAAA3wLoAAAAAAAAA",
+              "ViewState": "AQIAADwBAAAAAAAAAAAMwFoBAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-08T07:57:47.17Z",
               "EditorCaption": ""

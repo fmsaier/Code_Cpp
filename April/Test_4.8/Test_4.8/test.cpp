@@ -77,6 +77,7 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
@@ -184,24 +185,168 @@ using namespace std;
 
 
 
+//class Solution {
+//public:
+//	int subarraysDivByK(vector<int>& nums, int k)
+//	{
+//		vector<int> dp(nums.size() + 1, 0);
+//		for (size_t i = 1; i <= nums.size(); i++)
+//		{
+//			dp[i] = nums[i - 1] + dp[i - 1];
+//		}
+//		int ret = 0;
+//		for (size_t i = 1; i < dp.size(); i++)
+//		{
+//			for (size_t j = 0; j < i; j++)
+//			{
+//				if ((dp[i] - dp[j]) % k == 0)
+//					ret++;
+//			}
+//		}
+//		return ret;
+//	}
+//};
+
+
+//class Solution {
+//public:
+//    int tribonacci(int n)
+//    {
+//        if (n == 0)
+//            return 0;
+//        if (n == 1 || n == 2)
+//            return 1;
+//        int a = 0, b = 1, c = 1;
+//        int d = 0;
+//        for (size_t i = 0; i < n - 2; i++)
+//        {
+//            d = a + b + c;
+//            a = b;
+//            b = c;
+//            c = d;
+//        }
+//        return d;
+//    }
+//};
+//
+//
+////int main()
+////{
+////    static int a;
+////    a = 10;
+////    return 0;
+////}
+
+
+
+//class Solution {
+//public:
+//    int subarraySum(vector<int>& nums, int k)
+//    {
+//        size_t sum = 0;
+//        unordered_map<int, int> hash;
+//        hash[0] = 1;
+//        size_t ret = 0;
+//        for (size_t i = 0; i < nums.size(); i++)
+//        {
+//            sum += nums[i];
+//            ret += hash[sum - k];
+//            hash[sum]++;
+//        }
+//        return ret;
+//    }
+//};
+
+
+
+//class Solution {
+//public:
+//    int subarraysDivByK(vector<int>& nums, int k)
+//    {
+//        unordered_map<int, int> hash;
+//        int sum = 0;
+//        size_t ret = 0;
+//        hash[0] = 1;
+//        for (size_t i = 0; i < nums.size(); i++)
+//        {
+//            sum += nums[i];
+//            int n = (sum % k + k) % k;
+//            if (hash.count(n))
+//            {
+//                ret += hash[n];
+//            }
+//            hash[n]++;
+//        }
+//        return ret;
+//    }
+//};
+//
+//int main()
+//{
+//    Solution s;
+//    vector<int> nums = { 2,-2,2,-4 };
+//    cout << s.subarraysDivByK(nums, 6);
+//    //cout << (-1 % 4) << endl;
+//
+//    return 0;
+//}
+
+
+
+//class Solution {
+//public:
+//    int findMaxLength(vector<int>& nums) 
+//    {
+//        unordered_map<int, int> hash;
+//        hash[0] = -1;
+//        int sum = 0;
+//        int len = 0;
+//        for (size_t i = 0; i < nums.size(); i++)
+//        {
+//            sum += nums[i] == 0 ? -1 : 1;
+//            if (hash.count(sum))
+//                len = max(len, (int)(i - hash[sum]));
+//            else
+//                hash[sum] = i;
+//        }
+//        return len;
+//    }
+//};
+
+
+
+
 class Solution {
 public:
-	int subarraysDivByK(vector<int>& nums, int k)
-	{
-		vector<int> dp(nums.size() + 1, 0);
-		for (size_t i = 1; i <= nums.size(); i++)
-		{
-			dp[i] = nums[i - 1] + dp[i - 1];
-		}
-		int ret = 0;
-		for (size_t i = 1; i < dp.size(); i++)
-		{
-			for (size_t j = 0; j < i; j++)
-			{
-				if ((dp[i] - dp[j]) % k == 0)
-					ret++;
-			}
-		}
-		return ret;
-	}
+    vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k)
+    {
+        vector<vector<int>> dp(mat.size() + 2 * k + 1, vector<int>(mat[0].size() + 2 * k + 1, 0));
+        vector<vector<int>> ret(mat.size(), vector<int>(mat[0].size(), 0));
+        for (size_t i = k + 1; i < dp.size(); i++)
+        {
+            for (size_t j = k + 1; j < dp[0].size(); j++)
+            {
+                if (j < dp[0].size() - k && i < dp.size() - k)
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + mat[i - k - 1][j - k - 1];
+                else
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1];
+
+            }
+        }
+        for (size_t i = 0; i < ret.size(); i++)
+        {
+            for (size_t j = 0; j < ret[0].size(); j++)
+            {
+                ret[i][j] = dp[i + 2 * k + 1][j + 2 * k + 1] - dp[i][j + 2 * k + 1] - dp[i + 2 * k + 1][j] + dp[i][j];
+            }
+        }
+        return ret;
+    }
 };
+
+int main()
+{
+    Solution s;
+	vector<vector<int>> mat = { {67, 64, 78},{99, 98, 38},{82, 46, 46},{6, 52, 55},{55, 99, 45} };
+    s.matrixBlockSum(mat, 3);
+}
