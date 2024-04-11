@@ -316,37 +316,180 @@ using namespace std;
 
 
 
-class Solution {
-public:
-    vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k)
-    {
-        vector<vector<int>> dp(mat.size() + 2 * k + 1, vector<int>(mat[0].size() + 2 * k + 1, 0));
-        vector<vector<int>> ret(mat.size(), vector<int>(mat[0].size(), 0));
-        for (size_t i = k + 1; i < dp.size(); i++)
-        {
-            for (size_t j = k + 1; j < dp[0].size(); j++)
-            {
-                if (j < dp[0].size() - k && i < dp.size() - k)
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + mat[i - k - 1][j - k - 1];
-                else
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1];
+//class Solution {
+//public:
+//    vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k)
+//    {
+//        vector<vector<int>> dp(mat.size() + 2 * k + 1, vector<int>(mat[0].size() + 2 * k + 1, 0));
+//        vector<vector<int>> ret(mat.size(), vector<int>(mat[0].size(), 0));
+//        for (size_t i = k + 1; i < dp.size(); i++)
+//        {
+//            for (size_t j = k + 1; j < dp[0].size(); j++)
+//            {
+//                if (j < dp[0].size() - k && i < dp.size() - k)
+//                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + mat[i - k - 1][j - k - 1];
+//                else
+//                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1];
+//
+//            }
+//        }
+//        for (size_t i = 0; i < ret.size(); i++)
+//        {
+//            for (size_t j = 0; j < ret[0].size(); j++)
+//            {
+//                ret[i][j] = dp[i + 2 * k + 1][j + 2 * k + 1] - dp[i][j + 2 * k + 1] - dp[i + 2 * k + 1][j] + dp[i][j];
+//            }
+//        }
+//        return ret;
+//    }
+//};
+//
+//int main()
+//{
+//    Solution s;
+//	vector<vector<int>> mat = { {67, 64, 78},{99, 98, 38},{82, 46, 46},{6, 52, 55},{55, 99, 45} };
+//    s.matrixBlockSum(mat, 3);
+//}
 
-            }
-        }
-        for (size_t i = 0; i < ret.size(); i++)
-        {
-            for (size_t j = 0; j < ret[0].size(); j++)
-            {
-                ret[i][j] = dp[i + 2 * k + 1][j + 2 * k + 1] - dp[i][j + 2 * k + 1] - dp[i + 2 * k + 1][j] + dp[i][j];
-            }
-        }
-        return ret;
-    }
+
+//class Test
+//{
+//public:
+//	Test()
+//	{
+//		a = new int[10];
+//	}
+//	const int& operator[](int index) const
+//	{
+//		a = nullptr;
+//		//return a[index];
+//		return 0;
+//	}
+//	mutable int* a;
+//};
+//
+//#include <functional>
+//
+//int main()
+//{
+//	//const Test t;
+//	//t[8] = 1;
+//	//cout << t[8];
+//
+//	int c = 10;
+//	function<void()> f =  [&] {c++; };
+//	f();
+//	cout << c;
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int count = 0;
+//	int right = 9, left = 0;
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	while (left <= right)
+//	{
+//		int mid = left + (right - left + 1) / 2;
+//		count++;
+//		if (arr[mid] < 0)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > 0)
+//			right = mid - 1;
+//		else
+//			break;
+//	}
+//	cout << count << endl;
+//	return 0;
+//}
+
+
+//class A
+//{
+//public:
+//	A() { printf("a"); }
+//	A(const A&) { printf("b"); }
+//	A(A&&) { printf("c"); }
+//	A operator = (const A&) { printf("d"); }
+//};
+//class B :public A
+//{
+//public:
+//	B() :A() { printf("1"); }
+//	B(const B& b) :A(b) { printf("2"); }
+//	B(B&& b) :A(b) { printf("3"); }
+//	B operator = (const B&) { printf("4"); }
+//};
+//int main()
+//{
+//	B b;
+//	B m(b);
+//	B n = b;
+//	B q(std::move(b));
+//	return 0;
+//}
+//
+//
+////int main()
+////{
+////	char str[] = "glad to test something";
+////	char* p = str;
+////	p++;
+////	int* p1 = (int *)p;
+////	p1++;
+////	p = (char *)p1;
+////	printf("result is %s", p);
+////
+////}
+//
+//
+////#include < iostream>
+////using namespace std;
+////
+////size_t strlcpy(char* dst, const char* src, size_t siz)
+////{
+////	char* d = dst;//寄存器: char指针赋值
+////	const char* s = src;//常量指针:
+////	size_t n = siz;//
+////	if (n != 0 && --n != 0) {//n先减
+////		do {
+////			if ((*++d = *++s) == 0)//赋值
+////				break;
+////		} while (--n != 0);//
+////	}
+////	if (n == 0) {
+////			if (siz == 0)
+////				*d = '\0';//空
+////			while (*s++);//地址增加，直到取值不存在， 直到最后
+////	}
+////	return (s - src);
+////}
+////
+////int main()
+////{
+////	char src[] = "hello";
+////	char dst[20];
+////	cout << strlcpy(dst, src, 2) << endl;
+////	cout << dst << endl;
+////	return 0;
+////}
+
+class A
+{
+public:
+	~A()
+	{
+		cout << "~A()" << endl;
+	}
 };
 
 int main()
 {
-    Solution s;
-	vector<vector<int>> mat = { {67, 64, 78},{99, 98, 38},{82, 46, 46},{6, 52, 55},{55, 99, 45} };
-    s.matrixBlockSum(mat, 3);
+	A* a = new A();
+
+	return 0;
 }
