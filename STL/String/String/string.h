@@ -136,4 +136,42 @@ namespace fmsaier
         friend ostream& operator<<(ostream& _cout, const fmsaier::string& s);
         friend istream& operator>>(istream& _cin, fmsaier::string& s);
     };
+
+    ostream& operator<<(ostream& out, const string& s)
+    {
+        for (auto ch : s)
+        {
+            out << ch;
+        }
+
+        return out;
+    }
+
+    istream& operator>>(istream& in, string& s)
+    {
+        s.clear();
+        char buff[128];
+        char ch = in.get();
+        int i = 0;
+        while (ch != ' ' && ch != '\n')
+        {
+            buff[i++] = ch;
+            if (i == 127)
+            {
+                buff[i] = '\0';
+                s += buff;
+                i = 0;
+            }
+
+            ch = in.get();
+        }
+
+        if (i > 0)
+        {
+            buff[i] = '\0';
+            s += buff;
+        }
+
+        return in;
+    }
 };

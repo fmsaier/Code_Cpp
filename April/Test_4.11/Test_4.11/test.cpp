@@ -179,3 +179,20 @@ using namespace std;
 
 
 
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+using namespace std;
+
+
+int main() {
+	long long sum = 0;
+	cin >> sum;
+	sum = sum / 1000;
+	int s = sum % 60;
+	int m = sum / 60 % 60;
+	int h = sum / 60 / 60 % 24;
+	printf("%02d:%02d:%02d", h, m, s);
+	return 0;
+}
