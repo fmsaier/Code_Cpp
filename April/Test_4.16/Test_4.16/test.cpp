@@ -96,33 +96,33 @@
 
 
 
-#include <iostream>
-using namespace std;
-
-int main() 
-{
-	float a;
-	char b;
-	cin >> a >> b;
-	int c = a;
-
-	int cost = 0;
-	cost += 20;
-	if (a > 1)
-	{
-		cost += (int)(a / 1);
-		if (c * 1000 == a * 1000)
-		{
-			cost--;
-		}
-	}
-
-	if (b == 'y')
-		cost += 5;
-	cout << cost << endl;
-	return 0;
-}
-// 64 位输出请用 printf("%lld")
+//#include <iostream>
+//using namespace std;
+//
+//int main() 
+//{
+//	float a;
+//	char b;
+//	cin >> a >> b;
+//	int c = a;
+//
+//	int cost = 0;
+//	cost += 20;
+//	if (a > 1)
+//	{
+//		cost += (int)(a / 1);
+//		if (c * 1000 == a * 1000)
+//		{
+//			cost--;
+//		}
+//	}
+//
+//	if (b == 'y')
+//		cost += 5;
+//	cout << cost << endl;
+//	return 0;
+//}
+//// 64 位输出请用 printf("%lld")
 
 
 //
@@ -208,3 +208,78 @@ int main()
 //        cout << -1 << endl;
 //}
 //// 64 位输出请用 printf("%lld")
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//static bool Num(int n)
+//{
+//	bool isOK = true;
+//	while (n > 10)
+//	{
+//		int tmp = n % 10;
+//		if (tmp != 0 && tmp != 2 && tmp != 4)
+//		{
+//			isOK = false;
+//			break;
+//		}
+//		n /= 10;
+//	}
+//	if (n != 0 && n != 2 && n != 4)
+//	{
+//		isOK = false;
+//	}
+//	return isOK;
+//}
+
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param n int整型
+     * @param m int整型
+     * @return int整型
+     */
+    int LastRemaining_Solution(int n, int m) {
+        list<int> l;
+        for (size_t i = 0; i < n; i++)
+        {
+            l.push_back(i);
+        }
+        list<int>::iterator lit = l.begin();
+        while (l.size() != 1)
+        {
+            int k = m;
+
+            while (--k)
+            {
+                lit++;
+                if (lit == l.end())
+                    lit = l.begin();
+            }
+            if (lit != --l.end())
+                lit = l.erase(lit);
+            else
+            {
+                l.erase(lit);
+                lit = l.begin();
+            }
+        }
+        return *lit;
+    }
+};
+
+int main()
+{
+    Solution s;
+    cout << s.LastRemaining_Solution(5, 3);
+	return 0;
+}

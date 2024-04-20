@@ -28,22 +28,178 @@ struct RBTreeNode
 	{}
 };
 
-
 template<class T>
+struct RBTreeIterator
+{
+	typedef RBTreeNode<T> Node;
+	typedef RBTreeIterator<T> Self;
+
+	RBTreeIterator(Node* pNode)
+		: _pNode(pNode)
+	{}
+
+	// 让迭代器具有类似指针的行为
+	T& operator*()
+	{
+		return _pNode->_data;
+	}
+	T* operator->()
+	{
+		return &(_pNode->_data);
+	}
+
+	// 然迭代器可以移动：前置/后置++  
+	Self& operator++()
+	{
+		//右不为空
+		if (_pNode->_pRight)
+		{
+			Node* cur = _pNode->_pRight;
+			while (cur->_pLeft)
+			{
+				cur = cur->_pLeft;
+			}
+			_pNode = cur;
+			return *this;
+		}
+		//右为空
+		else
+		{
+			Node* cur = _pNode;
+			Node* parent = _pNode->_pParent;
+			while (parent != nullptr && cur != parent->_pLeft)
+			{
+				cur = parent;
+				parent = parent->_pParent;
+			}
+			_pNode = parent;
+			return *this;
+		}
+	}
+	Self operator++(int)
+	{
+		Node* tmp = _pNode;
+		//右不为空
+		if (_pNode->_pRight)
+		{
+			Node* cur = _pNode->_pRight;
+			while (cur->_pLeft)
+			{
+				cur = cur->_pLeft;
+			}
+			_pNode = cur;
+			return tmp;
+		}
+		//右为空
+		else
+		{
+			Node* cur = _pNode;
+			Node* parent = _pNode->_pParent;
+			while (parent != nullptr && cur != parent->_pLeft)
+			{
+				cur = parent;
+				parent = parent->_pParent;
+			}
+			_pNode = parent;
+			return tmp;
+		}
+	}
+	// 然迭代器可以移动：前置/后置-- 
+	Self& operator--()
+	{
+		//左不为空
+		if (_pNode->_pLeft)
+		{
+			Node* cur = _pNode->_pLeft;
+			while (cur->_pRight)
+			{
+				cur = cur->_pRight;
+			}
+			_pNode = cur;
+			return *this;
+		}
+		//左为空
+		else
+		{
+			Node* cur = _pNode;
+			Node* parent = _pNode->_pParent;
+			while (parent != nullptr && cur != parent->_pRight)
+			{
+				cur = parent;
+				parent = parent->_pParent;
+			}
+			_pNode = parent;
+			return *this;
+		}
+	}
+	Self operator--(int)
+	{
+		Node* tmp = _pNode;
+		//左不为空
+		if (_pNode->_pLeft)
+		{
+			Node* cur = _pNode->_pLeft;
+			while (cur->_pRight)
+			{
+				cur = cur->_pRight;
+			}
+			_pNode = cur;
+			return tmp;
+		}
+		//左为空
+		else
+		{
+			Node* cur = _pNode;
+			Node* parent = _pNode->_pParent;
+			while (parent != nullptr && cur != parent->_pRight)
+			{
+				cur = parent;
+				parent = parent->_pParent;
+			}
+			_pNode = parent;
+			return tmp;
+		}
+	}
+
+	// 让迭代器可以比较
+	bool operator!=(const Self& s) const
+	{
+		return _pNode != s._pNode;
+	}
+	bool operator==(const Self& s) const
+	{
+		return _pNode == s._pNode;
+	}
+
+private:
+	Node* _pNode;
+};
+
+
+// T: 可能是键值对<key,value>
+//    可能是一个key
+// 不论节点中存储的是<key, value> || key, 都是按照key来进行比较的
+// KeyOfValue: 提取data中的Key
+template<class T, class KeyOfValue>
 class RBTree
 {
 	typedef RBTreeNode<T> Node;
 public:
+	typedef RBTreeIterator<T> iterator;
+
 	RBTree()
 	{
 		_pHead = new Node();
 		_pHead->_pLeft = nullptr;//begin
 		_pHead->_pRight = nullptr;//root
+		_pHead->_pParent = nullptr;
+		_size = 0;
 	}
 
 	// 在红黑树中插入值为data的节点，插入成功返回true，否则返回false
 	// 注意：为了简单起见，本次实现红黑树不存储重复性元素
-	bool Insert(const T& data)
+	//pair<iterator, bool>
+	pair<iterator, bool> Insert(const T& data)
 	{
 		Node* child = _pHead->_pRight;
 		Node* parent = _pHead;
@@ -64,17 +220,19 @@ public:
 			}
 			else
 			{
-				return false;
+				return make_pair(nullptr, false);
 			}
 		}
 		child = new Node(data);
+		Node* tmp = child;
 		//根
 		if (parent == _pHead)
 		{
 			_pHead->_pRight = child;
 			child->_color = BLACK;
 			child->_pParent = _pHead;
-			return true;
+			_size++;
+			return make_pair(child, true);
 		}
 		//正常插入
 		if (child->_data > parent->_data)
@@ -92,7 +250,7 @@ public:
 		//根一定是黑的
 		//child == root 跟 child 是第二层都不用跑了 
 		// rb是两层两层调整所以要child不是第一二层
-		//只要parent是黑也不用跑了 bf == 0
+		//只要parent是黑也不用跑了 == bf == 0
 		while (parent != _pHead && parent->_color == RED)
 		{
 			//设置g跟u
@@ -193,6 +351,8 @@ public:
 			cur = cur->_pLeft;
 		}
 		_pHead->_pLeft = cur;
+		_size++;
+		return make_pair(tmp, true);
 	}
 
 	// 检测红黑树中是否存在值为data的节点，存在返回该节点的地址，否则返回nullptr
@@ -234,6 +394,32 @@ public:
 			cur = cur->_pRight;
 		}
 		return cur;
+	}
+
+	// Begin和End迭代器
+	iterator begin()
+	{
+		return _pHead->_pLeft;
+	}
+	iterator end()
+	{
+		return nullptr;
+	}
+
+	// 红黑树是否为红，是返回true，否则返回false
+	bool empty() const
+	{
+		return _size == 0;
+	}
+	// 返回红黑树中有效节点的个数
+	size_t size() const
+	{
+		return _size;
+	}
+	// 将红黑树中的有效节点删除，注意：删除的是有效节点，不删除头结点
+	void clear()
+	{
+		_Destroy(_pHead->_pRight);
 	}
 
 	// 检测红黑树是否为有效的红黑树，注意：其内部主要依靠_IsValidRBTRee函数检测
@@ -363,7 +549,15 @@ private:
 	{
 		return _pHead->_pRight;
 	}
+	void _Destroy(Node*& pRoot)
+	{
+		if (pRoot == nullptr)
+			return;
+		_Destroy(pRoot->_pLeft);
+		_Destroy(pRoot->_pRight);
+		delete pRoot;
+	}
 private:
 	Node* _pHead;
+	size_t _size;
 };
-

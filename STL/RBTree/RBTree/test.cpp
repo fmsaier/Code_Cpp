@@ -4,19 +4,25 @@
 
 void TestRBTree()
 {
-	RBTree<int> rb;
+	RBTree<int,int> rb;
 	srand(time(NULL));
 	clock_t begin1 = clock();
-	for (int i = 0; i < 1000000; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		int tmp = rand() + i;
-		rb.Insert(tmp);
+		pair<RBTree<int,int>::iterator,bool> p = rb.Insert(tmp);
+		//cout << *p.first << endl;
 		if (!rb.Find(tmp))
 			cout << "error" << endl;
 	}
 	clock_t end1 = clock();
 
+	for (auto& i : rb)
+	{
+		cout << i << " ";
+	}
 
+	cout << endl;
 	//rb.Insert(5);	
 	//rb.Insert(7);
 	//rb.Insert(9);
