@@ -1,6 +1,7 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include "string.h"
 
+
 void Test_string1()
 {
     fmsaier::string s("Hello");
@@ -56,5 +57,7 @@ int main()
     int a = 0;
     int b = int();
 	//Test_string5();
+
+
 	return 0;
 }

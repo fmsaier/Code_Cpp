@@ -235,51 +235,58 @@
 
 #include <iostream>
 #include <list>
+#include <string>
+#include <string.h>
 
 using namespace std;
 
-class Solution {
-public:
-    /**
-     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
-     *
-     *
-     * @param n int整型
-     * @param m int整型
-     * @return int整型
-     */
-    int LastRemaining_Solution(int n, int m) {
-        list<int> l;
-        for (size_t i = 0; i < n; i++)
-        {
-            l.push_back(i);
-        }
-        list<int>::iterator lit = l.begin();
-        while (l.size() != 1)
-        {
-            int k = m;
-
-            while (--k)
-            {
-                lit++;
-                if (lit == l.end())
-                    lit = l.begin();
-            }
-            if (lit != --l.end())
-                lit = l.erase(lit);
-            else
-            {
-                l.erase(lit);
-                lit = l.begin();
-            }
-        }
-        return *lit;
-    }
-};
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param n int整型
+//     * @param m int整型
+//     * @return int整型
+//     */
+//    int LastRemaining_Solution(int n, int m) {
+//        list<int> l;
+//        for (size_t i = 0; i < n; i++)
+//        {
+//            l.push_back(i);
+//        }
+//        list<int>::iterator lit = l.begin();
+//        while (l.size() != 1)
+//        {
+//            int k = m;
+//
+//            while (--k)
+//            {
+//                lit++;
+//                if (lit == l.end())
+//                    lit = l.begin();
+//            }
+//            if (lit != --l.end())
+//                lit = l.erase(lit);
+//            else
+//            {
+//                l.erase(lit);
+//                lit = l.begin();
+//            }
+//        }
+//        return *lit;
+//    }
+//};
 
 int main()
 {
-    Solution s;
-    cout << s.LastRemaining_Solution(5, 3);
+    /*Solution s;
+    cout << s.LastRemaining_Solution(5, 3);*/
+
+    string s = "abc";
+    cout << sizeof(s.c_str());
+    char str[] = "abc";
+
 	return 0;
 }

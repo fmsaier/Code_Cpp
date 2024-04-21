@@ -1,0 +1,48 @@
+﻿  test.cpp
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test.cpp”)
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\OpenHash.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test.cpp”)
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027: 使用了未定义类型“fmsaier::HashBucket<K,std::pair<K,V>,fmsaier::unordered_map<K,V,fmsaier::HashFunc<K>>::KeyOfValue,HF>”
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:         with
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:         [
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:             K=int,
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:             V=int,
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:             HF=fmsaier::HashFunc<int>
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63): error C2027:         ]
+  (编译源文件“test.cpp”)
+  D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(11,8):
+  参见“fmsaier::HashBucket<K,std::pair<K,V>,fmsaier::unordered_map<K,V,fmsaier::HashFunc<K>>::KeyOfValue,HF>”的声明
+          with
+          [
+              K=int,
+              V=int,
+              HF=fmsaier::HashFunc<int>
+          ]
+  D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,63):
+  模板实例化上下文(最早的实例化上下文)为
+  	D:\GitHub\Code_Cpp\STL\Hash\Hash\test.cpp(33,26):
+  	查看对正在编译的 类 模板 实例化“fmsaier::unordered_map<int,int,fmsaier::HashFunc<K>>”的引用
+          with
+          [
+              K=int
+          ]
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,72): error C3646: “iterator”: 未知重写说明符
+  (编译源文件“test.cpp”)
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(106,58): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“test.cpp”)
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(150,8): error C3203: "iterator": 未指定的 类 模板 不能用作 模板 参数 "_Ty1" 的 模板 参数，应为真实类型
+  (编译源文件“test.cpp”)
+  
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(170,6): error C2079: “fmsaier::unordered_map<int,int,fmsaier::HashFunc<K>>::_ht”使用未定义的 class“fmsaier::HashBucket<K,std::pair<K,V>,fmsaier::unordered_map<K,V,fmsaier::HashFunc<K>>::KeyOfValue,HF>”
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(170,6): error C2079:         with
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(170,6): error C2079:         [
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(170,6): error C2079:             K=int
+D:\GitHub\Code_Cpp\STL\Hash\Hash\unordered_map.h(170,6): error C2079:         ]
+  (编译源文件“test.cpp”)
+  
