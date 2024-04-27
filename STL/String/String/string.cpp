@@ -27,6 +27,10 @@ namespace fmsaier
         string tmp(s._str);
         swap(tmp);
     }
+    //string::string(string&& s)
+    //{
+    //    swap(s);
+    //}
     //写法一
     /*string& string::operator=(const string& s)
     {
@@ -42,6 +46,11 @@ namespace fmsaier
         swap(s);
         return *this;
     }
+    //string& string::operator=(string&& s)
+    //{
+    //    swap(s);
+    //    return *this;
+    //}
     string::~string()
     {
         //if(_str != nullptr)

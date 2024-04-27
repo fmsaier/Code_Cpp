@@ -1,3 +1,4 @@
 ﻿  test.cpp
-D:\GitHub\Code_Cpp\STL\String\String\string.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  String.vcxproj -> D:\GitHub\Code_Cpp\STL\String\x64\Debug\String.exe
+test.obj : error LNK2005: "class std::basic_istream<char,struct std::char_traits<char> > & __cdecl fmsaier::operator>>(class std::basic_istream<char,struct std::char_traits<char> > &,class fmsaier::string &)" (??5fmsaier@@YAAEAV?$basic_istream@DU?$char_traits@D@std@@@std@@AEAV12@AEAVstring@0@@Z) 已经在 string.obj 中定义
+test.obj : error LNK2005: "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl fmsaier::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class fmsaier::string const &)" (??6fmsaier@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEAV12@AEBVstring@0@@Z) 已经在 string.obj 中定义
+D:\GitHub\Code_Cpp\STL\String\x64\Debug\String.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

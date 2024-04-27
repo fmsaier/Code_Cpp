@@ -1,4 +1,4 @@
-#define  _CRT_SECURE_NO_WARNINGS
+﻿#define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <assert.h>
 using std::ostream;
@@ -19,8 +19,10 @@ namespace fmsaier
     public:
         string(const char* str = "");
         string(const string& s); 
+        //string(string&& s);
         //string& operator=(const string& s);
         string& operator=(string s);
+        //string& operator=(string&& s);
         ~string();
 
         //////////////////////////////////////////////////////////////
