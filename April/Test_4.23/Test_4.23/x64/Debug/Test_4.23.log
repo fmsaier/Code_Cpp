@@ -1,2 +1,90 @@
 ﻿  test.cpp
-  Test_4.23.vcxproj -> D:\GitHub\Code_Cpp\April\Test_4.23\x64\Debug\Test_4.23.exe
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(671,5): error C2955: “std::vector”: 使用 类 模板 需要 模板 参数列表
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(436,7):
+  参见“std::vector”的声明
+  
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(671,12): error C2133: “v”: 未知的大小
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(671,12): error C2512: “std::vector”: 没有合适的默认构造函数可用
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(436,7):
+  参见“std::vector”的声明
+  
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,10): error C2663: “std::vector<_Ty,_Alloc>::push_back”: 没有重载函数具有对 “this” 指针的有效转换
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(874,23):
+  可能是“void std::vector<_Ty,_Alloc>::push_back(_Ty &&)”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,10):
+  	“void std::vector<_Ty,_Alloc>::push_back(_Ty &&)”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,9):
+  		原因如下: 无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,9):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(870,23):
+  或    “void std::vector<_Ty,_Alloc>::push_back(const _Ty &)”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,10):
+  	“void std::vector<_Ty,_Alloc>::push_back(const _Ty &)”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,9):
+  		原因如下: 无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,9):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(675,10):
+  尝试匹配参数列表“(int)”时
+  
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,11): error C2663: “std::vector<_Ty,_Alloc>::begin”: 没有重载函数具有对 “this” 指针的有效转换
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1807,44):
+  可能是“std::_Vector_const_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::begin(void) noexcept const”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,11):
+  	“std::_Vector_const_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::begin(void) noexcept const”: 不能将“this”指针从“std::vector”转换为“const std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,10):
+  		原因如下: 无法从“std::vector”转换为“const std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,10):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1802,38):
+  或    “std::_Vector_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::begin(void) noexcept”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,11):
+  	“std::_Vector_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::begin(void) noexcept”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,10):
+  		原因如下: 无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,10):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,11):
+  尝试匹配参数列表“()”时
+  
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,22): error C2663: “std::vector<_Ty,_Alloc>::end”: 没有重载函数具有对 “this” 指针的有效转换
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1817,44):
+  可能是“std::_Vector_const_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::end(void) noexcept const”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,22):
+  	“std::_Vector_const_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::end(void) noexcept const”: 不能将“this”指针从“std::vector”转换为“const std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,21):
+  		原因如下: 无法从“std::vector”转换为“const std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,21):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1812,38):
+  或    “std::_Vector_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::end(void) noexcept”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,22):
+  	“std::_Vector_iterator<std::_Vector_val<conditional<std::_Is_simple_alloc_v<allocator_traits<_Alloc>::rebind_alloc<_Ty>>,std::_Simple_types<_Value_type>,std::_Vec_iter_types<_Ty,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::difference_type,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer,allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer>>::type>> std::vector<_Ty,_Alloc>::end(void) noexcept”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,21):
+  		原因如下: 无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,21):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(678,22):
+  尝试匹配参数列表“()”时
+  
+D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16): error C2678: 二进制“[”: 没有找到接受“std::vector”类型的左操作数的运算符(或没有可接受的转换)
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1900,40):
+  可能是“const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  	“const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const”: 不能将“this”指针从“std::vector”转换为“const std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  		原因如下: 无法从“std::vector”转换为“const std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\Visual Studio\Visual Studio\VC\Tools\MSVC\14.39.33519\include\vector(1890,34):
+  或    “_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept”
+  	D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  	“_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept”: 不能将“this”指针从“std::vector”转换为“std::vector<_Ty,_Alloc> &”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  		原因如下: 无法从“std::vector”转换为“std::vector<_Ty,_Alloc>”
+  		D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  		转换要求第二个用户定义的转换运算符或构造函数
+  D:\GitHub\Code_Cpp\April\Test_4.23\Test_4.23\test.cpp(682,16):
+  尝试匹配参数列表“(std::vector, int)”时
+  

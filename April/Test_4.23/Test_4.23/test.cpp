@@ -658,3 +658,31 @@
 
 
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    cin >> n;
+    vector<int> v;
+    int tmp = 0;
+    while (cin >> tmp)
+    {
+        v.push_back(tmp);
+    }
+
+    sort(v.begin(), v.end());
+    int sum = 0;
+    for (int i = n; i < 2 * n; i++)
+    {
+        sum += v[i];
+    }
+
+    cout << sum << endl;
+}
+// 64 位输出请用 printf("%lld")
