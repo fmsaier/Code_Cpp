@@ -1,1 +1,3 @@
-﻿  AVL.vcxproj -> D:\GitHub\Code_Cpp\STL\AVL\x64\Debug\AVL.exe
+﻿  test.cpp
+D:\Github\Code_Cpp\STL\AVL\AVL\test.cpp(8,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  AVL.vcxproj -> D:\Github\Code_Cpp\STL\AVL\x64\Debug\AVL.exe
