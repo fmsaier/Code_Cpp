@@ -1,0 +1,7 @@
+﻿  Sort.cpp
+D:\Github\Code_Cpp\January\Project_1.11\Sort.cpp(13,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Github\Code_Cpp\January\Project_1.11\Sort.cpp(113,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Github\Code_Cpp\January\Project_1.11\Sort.cpp(153,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Github\Code_Cpp\January\Project_1.11\Sort.cpp(155,28): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Github\Code_Cpp\January\Project_1.11\Sort.cpp(161,31): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Project_1.11.vcxproj -> D:\Github\Code_Cpp\January\Project_1.11\x64\Debug\Project_1.11.exe

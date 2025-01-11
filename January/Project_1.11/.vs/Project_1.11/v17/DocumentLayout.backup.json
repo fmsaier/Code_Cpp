@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Github\\Code_Cpp\\January\\Project_1.11\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C7C7C0FD-5F05-4545-94A9-5394EA2D527B}|Project_1.11.vcxproj|D:\\Github\\Code_Cpp\\January\\Project_1.11\\Sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7C7C0FD-5F05-4545-94A9-5394EA2D527B}|Project_1.11.vcxproj|solutionrelative:Sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1350,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sort.cpp",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\January\\Project_1.11\\Sort.cpp",
+              "RelativeDocumentMoniker": "Sort.cpp",
+              "ToolTip": "D:\\Github\\Code_Cpp\\January\\Project_1.11\\Sort.cpp",
+              "RelativeToolTip": "Sort.cpp",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAAAMoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-11T07:18:19.335Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
