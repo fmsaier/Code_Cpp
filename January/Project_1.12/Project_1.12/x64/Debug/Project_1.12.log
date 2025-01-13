@@ -1,3 +1,2 @@
-﻿  test.cpp
-D:\Github\Code_Cpp\January\Project_1.12\test.cpp(64,10): warning C4930: “Data d3(void)”: 未调用原型函数(是否是有意用变量定义的?)
+﻿  LINK : 没有找到 D:\Github\Code_Cpp\January\Project_1.12\x64\Debug\Project_1.12.exe 或上一个增量链接没有生成它；正在执行完全链接
   Project_1.12.vcxproj -> D:\Github\Code_Cpp\January\Project_1.12\x64\Debug\Project_1.12.exe
