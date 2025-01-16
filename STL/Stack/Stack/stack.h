@@ -5,7 +5,6 @@ using namespace std;
 
 namespace fmsaier
 {
-#include<deque>
 	template<class T, class Con = deque<T>>
 	class stack
 	{

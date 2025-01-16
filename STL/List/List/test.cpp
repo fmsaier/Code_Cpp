@@ -66,14 +66,19 @@ void Test3()
 #include "list.h"
 #include <vector>
 
+class A
+{
+public:
+	int a;
+};
+
 int main()
 {
 	static int a = 0;
 	//typedef a b;
-	fmsaier::list<int> l(1);
-	//fmsaier::list<int>::const_iterator it = l.begin();
-	//l.push_back(1);
-	//*it++;
+	fmsaier::list<A> l;
+	fmsaier::list<A>::iterator it = l.begin();
+	cout << it->a << endl;
 	vector<int> v;
 	vector<int>::const_iterator vit = v.begin();
 	v.push_back(1);

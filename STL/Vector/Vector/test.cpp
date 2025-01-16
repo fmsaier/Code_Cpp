@@ -1,4 +1,5 @@
 ﻿#include "vector.h"
+
 using namespace fmsaier;
 
 void Test1()

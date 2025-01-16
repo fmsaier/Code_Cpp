@@ -20,5 +20,9 @@ void Test1()
 int main()
 {
 	Test1();
+	int b = 1;
+	const int* pb = &b;
+	const int* & a = pb;
+	a++;
 	return 0;
 }
