@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\",
+  "WorkspaceRootPath": "D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|solutionrelative:BinarySearchTree\\BinarySearchTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EA87A241-100A-4907-B636-7E923F85A83B}|BinarySearchTree\\BinarySearchTree.vcxproj|solutionrelative:BinarySearchTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "BinarySearchTree.h",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h",
               "RelativeDocumentMoniker": "BinarySearchTree\\BinarySearchTree.h",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\BinarySearchTree.h",
               "RelativeToolTip": "BinarySearchTree\\BinarySearchTree.h",
-              "ViewState": "AQIAABAAAAAAAAAAAAAIwLYAAAAWAAAA",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwLYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-11T11:29:09.974Z",
               "EditorCaption": ""
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "test.cpp",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp",
               "RelativeDocumentMoniker": "BinarySearchTree\\test.cpp",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\BinarySearchTree\\BinarySearchTree\\test.cpp",
               "RelativeToolTip": "BinarySearchTree\\test.cpp",
               "ViewState": "AQIAADQAAAAAAAAAAAAAAD4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",

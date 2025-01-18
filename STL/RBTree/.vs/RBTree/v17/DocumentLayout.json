@@ -1,14 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\Code_Cpp\\STL\\RBTree\\",
+  "WorkspaceRootPath": "D:\\Github\\Code_Cpp\\STL\\RBTree\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|solutionrelative:RBTree\\RBTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670809\u65E5--map\u548Cset\u5C01\u88C5-\u4E0B\u5348\\RBTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|solutionrelative:RBTree\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670804\u65E5--AVL\u6811\u002B\u7EA2\u9ED1\u6811\\AVLTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{096B08FB-98BF-4398-82AB-DBDEBD3F19F3}|RBTree\\RBTree.vcxproj|solutionrelative:RBTree\\RBTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,14 +30,36 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "test.cpp",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp",
               "RelativeDocumentMoniker": "RBTree\\test.cpp",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\test.cpp",
               "RelativeToolTip": "RBTree\\test.cpp",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-03T11:31:15.096Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AVLTree.h",
+              "DocumentMoniker": "C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670804\u65E5--AVL\u6811\u002B\u7EA2\u9ED1\u6811\\AVLTree.h",
+              "ToolTip": "C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670804\u65E5--AVL\u6811\u002B\u7EA2\u9ED1\u6811\\AVLTree.h",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-17T12:39:03.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RBTree.h",
+              "DocumentMoniker": "C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670809\u65E5--map\u548Cset\u5C01\u88C5-\u4E0B\u5348\\RBTree.h",
+              "ToolTip": "C:\\Users\\26614\\Desktop\\110-issues\\24\u5E74-03\u670809\u65E5--map\u548Cset\u5C01\u88C5-\u4E0B\u5348\\RBTree.h",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-17T12:37:45.651Z",
               "EditorCaption": ""
             },
             {
@@ -40,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "RBTree.h",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h",
               "RelativeDocumentMoniker": "RBTree\\RBTree.h",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\RBTree\\RBTree\\RBTree.h",
               "RelativeToolTip": "RBTree\\RBTree.h",
-              "ViewState": "AQIAAA4CAAAAAAAAAAAAADICAAACAAAA",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAAC4BAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-03T11:31:03.527Z",
               "EditorCaption": ""
