@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\Code_Cpp\\STL\\Stack\\",
+  "WorkspaceRootPath": "D:\\Github\\Code_Cpp\\STL\\Stack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|solutionrelative:Stack\\stack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3B0516A5-EFDD-4A4C-8262-444E980DF134}|Stack\\Stack.vcxproj|solutionrelative:Stack\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -18,17 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "stack.h",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\stack.h",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\stack.h",
               "RelativeDocumentMoniker": "Stack\\stack.h",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\stack.h",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\stack.h",
               "RelativeToolTip": "Stack\\stack.h",
-              "ViewState": "AQIAABYAAAAAAAAAAAAIwCgAAAACAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-02-28T14:12:11.116Z",
               "EditorCaption": ""
@@ -37,24 +41,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "test.cpp",
-              "DocumentMoniker": "D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp",
               "RelativeDocumentMoniker": "Stack\\test.cpp",
-              "ToolTip": "D:\\GitHub\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\Stack\\Stack\\test.cpp",
               "RelativeToolTip": "Stack\\test.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-02-28T14:12:00.414Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1350,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2024-02-28T14:12:00.414Z"
             }
           ]
         }

@@ -41,7 +41,7 @@ namespace Close_Hash
 			if (Find(val.first))
 				return false;
 			//扩容
-			if ((float)_size / _ht.size() > 0.7f)
+			if ((float)_totalSize / _ht.size() > 0.7f)
 			{
 				//定义vector的话size会一直++
 				HashTable<K, V> newht(_ht.size() * 2);
@@ -87,7 +87,7 @@ namespace Close_Hash
 			Elem* target = nullptr;
 			if (target = Find(key))
 			{
-				target->_state == DELETE;
+				target->_state = DELETE;
 				_size--;
 				return true;
 			}
