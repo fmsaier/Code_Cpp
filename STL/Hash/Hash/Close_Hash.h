@@ -1,125 +1,148 @@
 #pragma once
-
-#include <string>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-// 注意：假如实现的哈希表中元素唯一，即key相同的元素不再进行插入
-// 为了实现简单，此哈希表中我们将比较直接与元素绑定在一起
-namespace Close_Hash
+namespace fmsaier
 {
-	enum State 
-	{ 
-		EMPTY, 
-		EXIST,
-		DELETE 
-	};
-
-	template<class K, class V>
-	class HashTable
+	namespace open_address
 	{
-		struct Elem
+		enum State
 		{
-			pair<K, V> _val;
-			State _state;
+			EMPTY,
+			EXIST,
+			DELETE
 		};
 
-	public:
-		HashTable(size_t capacity = 5)
-			: _ht(capacity)
-			,_size(0)
-			, _totalSize(0)
+		template<class T>
+		struct HashFunc
 		{
-			for (size_t i = 0; i < capacity; ++i)
-				_ht[i]._state = EMPTY;
-		}
-
-		// 插入
-		bool Insert(const pair<K, V>& val)
-		{
-			if (Find(val.first))
-				return false;
-			//扩容
-			if ((float)_totalSize / _ht.size() > 0.7f)
+			size_t operator()(const T& data)
 			{
-				//定义vector的话size会一直++
-				HashTable<K, V> newht(_ht.size() * 2);
-				Swap(newht);
-				for (auto& elem : newht._ht)
+				return (size_t)data;
+			}
+		};
+
+		template<class K, class V>
+		struct HashData
+		{
+			State _state = EMPTY;
+			pair<K, V> _data;
+		};
+
+		template<class K, class V, class HashFunc = HashFunc<K>>
+		class HashTable
+		{
+		public:
+			HashTable(size_t size = 10)
+			{
+				_table.resize(size);
+			}
+
+			HashData<K, V>* Find(const K& key)
+			{
+				HashFunc hs;
+				size_t index = hs(key) % _table.size();
+				while (_table[index]._state != EMPTY)
 				{
-					if (elem._state == EXIST)
+					if (key == _table[index]._data.first && _table[index]._state == EXIST)
+						return &(_table[index]);
+					++index;
+					index %= _table.size();
+				}
+				return nullptr;
+			}
+
+			bool Insert(const pair<K, V>& kv)
+			{
+				if (Find(kv.first))
+					return false;
+
+				HashFunc hs;
+				if ((float)_size / _table.size() > 0.7)
+				{
+					vector<HashData<K, V>> newTable(2 * _table.size());
+					_table.swap(newTable);
+					for (auto& kv : newTable)
 					{
-						Insert(elem._val);
+						if (kv._state == EXIST)
+							Insert(kv._data);
 					}
 				}
-			}
-			size_t index = HashFunc(val.first);
-			while (_ht[index]._state != EMPTY)
-			{
-				index = ++index % _ht.size();
-			}
-			_ht[index]._val = val;
-			_ht[index]._state = EXIST;
-			_size++;
-			_totalSize++;
-			return true;
-		}
 
-		// 查找
-		Elem* Find(const K& key)
-		{
-			size_t index = HashFunc(key);
-			while (_ht[index]._state != EMPTY)
-			{
-				if (_ht[index]._state == EXIST && _ht[index]._val.first == key)
+				size_t index = hs(kv.first) % _table.size();
+				while (_table[index]._state == EXIST)
 				{
-					return &_ht[index];
+					++index;
+					index %= _table.size();
 				}
-				index = (index + 1) % _ht.size();
-			}
-			return nullptr;
-		}
+				_table[index]._data = kv;
+				_table[index]._state = EXIST;
+				_size++;
 
-		// 删除
-		bool Erase(const K& key)
-		{
-			Elem* target = nullptr;
-			if (target = Find(key))
-			{
-				target->_state = DELETE;
-				_size--;
 				return true;
 			}
-			return false;
-		}
 
-		size_t Size()const
+			bool Erase(const K& key)
+			{
+				HashData<K, V>* ret = Find(key);
+				if (ret)
+				{
+					_size--;
+					ret->_state = DELETE;
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+		private:
+			vector<HashData<K, V>> _table;
+			size_t _size;
+		};
+
+		void TestHT1()
 		{
-			return _size;
-		}
+			int a[] = { 1,4,24,34,7,44,17,37 };
+			HashTable<int, int> ht;
+			for (auto e : a)
+			{
+				ht.Insert(make_pair(e, e));
+			}
 
-		bool Empty() const
-		{
-			return _size == 0;
-		}
+			for (auto e : a)
+			{
+				auto ret = ht.Find(e);
+				if (ret)
+				{
+					cout << ret->_data.first << ":E" << endl;
+				}
+				else
+				{
+					cout << ret->_data.first << ":D" << endl;
+				}
+			}
+			cout << endl;
 
-		void Swap(HashTable<K, V>& ht)
-		{
-			swap(_size, ht._size);
-			swap(_totalSize, ht._totalSize);
-			_ht.swap(ht._ht);
-		}
+			ht.Erase(34);
+			ht.Erase(4);
 
-	private:
-		size_t HashFunc(const K& key)
-		{
-			return key % _ht.capacity();
+			for (auto e : a)
+			{
+				auto ret = ht.Find(e);
+				if (ret)
+				{
+					cout << ret->_data.first << ":E" << endl;
+				}
+				else
+				{
+					cout << e << ":D" << endl;
+				}
+			}
+			cout << endl;
 		}
-
-	private:
-		vector<Elem> _ht;
-		size_t _size;
-		size_t _totalSize;  // 哈希表中的所有元素：有效和已删除, 扩容时候要用到
-	};
+	}	
 }

@@ -1,199 +1,206 @@
 #pragma once
-
-#include <string>
-#include <vector>
+#include<iostream>
+#include<vector>
 
 using namespace std;
 
-namespace OpenHash
+namespace fmsaier
 {
-
-	template<class T>
-	class HashFunc
+	namespace hash_bucket
 	{
-	public:
-		size_t operator()(const T& val)
+		template<class T>
+		struct HashNode
 		{
-			return val;
-		}
-	};
+			T _data;
+			HashNode<T>* _next;
 
-	template<>
-	class HashFunc<string>
-	{
-	public:
-		size_t operator()(const string& s)
-		{
-			const char* str = s.c_str();
-			unsigned int seed = 131; // 31 131 1313 13131 131313
-			unsigned int hash = 0;
-			while (*str)
+			HashNode(const T& data)
+				:_data(data)
+				, _next(nullptr)
 			{
-				hash = hash * seed + (*str++);
 			}
+		};
 
-			return hash;
-		}
-	};
+		template<class K, class T, class KeyOfValue, class HashFunc>
+		class HashTable;
 
-	template<class V>
-	struct HashBucketNode
-	{
-		HashBucketNode(const V& data)
-			: _pNext(nullptr)
-			, _data(data)
-		{}
-		HashBucketNode<V>* _pNext;
-		V _data;
-	};
-
-	// 本文所实现的哈希桶中key是唯一的
-	//template<class V, class HF = HashFunc<V>>
-	template<class K, class V, class KeyOfValue, class HF = HashFunc<V>>
-	class HashBucket
-	{
-		typedef HashBucketNode<V> Node;
-		typedef Node* PNode;
-
-		typedef HashBucket<K, V, KeyOfValue, HF> Self;
-
-	public:
-		HashBucket(size_t capacity = 5)
-			: _table(capacity, nullptr)
-			, _size(0)
-		{}
-
-		~HashBucket()
+		template<class K, class T, class KeyOfValue, class HashFunc>
+		class HashTableIterator
 		{
-			Clear();
-		}
-
-		// 哈希桶中的元素不能重复
-		Node* Insert(const V& data)
-		{
-			Node* ret = nullptr;
-			KeyOfValue kof;
-			if (ret = Find(kof(data)))
-				return ret;
-			//扩容
-			if (_size == _table.size())
+			typedef HashNode<T> Node;
+			typedef HashTable<K, T, KeyOfValue, HashFunc> Table;
+			typedef HashTableIterator<K, T, KeyOfValue, HashFunc> Self;
+		public:
+			HashTableIterator(Node* node, Table* ht)
+				:_node(node)
+				,_ht(ht)
+			{}
+			Self& operator++()
 			{
-				vector<Node*> newtable(2 * _table.size(), nullptr);
-				_table.swap(newtable);
-				for (size_t i = 0; i < newtable.size(); i++)
+				if (_node->_next)
+					_node = _node->_next;
+				else
 				{
-					Node* cur = newtable[i];
-					while (cur)
+					KeyOfValue kov;
+					HashFunc hf;
+					size_t hashi = hf(kov(_node->_data)) % _ht->_table.size();
+					// 找下一个桶
+					hashi++;
+					while (hashi < _ht->_table.size())
 					{
-						Node* next = cur->_pNext;
-						size_t index = HashFunc(cur->_data);
-						cur->_pNext = _table[index];
-						_table[index] = cur;
-						cur = next;
+						if (_ht->_table[hashi])
+						{
+							_node = _ht->_table[hashi];
+							break;
+						}
+						hashi++;
+					}
+					// 后面没有桶了
+					if (hashi == _ht->_table.size())
+					{
+						_node = nullptr;
 					}
 				}
+				return *this;
 			}
-			size_t index = HashFunc(data);
-			Node* newNode = new Node(data);
-			newNode->_pNext = _table[index];
-			_table[index] = newNode;
-			_size++;
-			return newNode;
-		}
+			T& operator*()
+			{
+				return _node->_data;
+			}
+			T* operator->()
+			{
+				return &(_node->_data);
+			}
+			bool operator==(const Self& s)
+			{
+				return _node == s._node;
+			}
+			bool operator!=(const Self& s)
+			{
+				return _node != s._node;
+			}
+		private:
+			Node* _node;
+			Table* _ht;
+		};
 
-		// 删除哈希桶中为data的元素(data不会重复)
-		bool Erase(const K& data)
+		template<class K, class T, class KeyOfValue, class HashFunc>
+		class HashTable
 		{
-			KeyOfValue kof;
-			size_t index = HashFunc(data);
-			PNode cur = _table[index];
-			if (!cur)
-				return false;
-			if (kof(cur->_data) == data)
+			typedef HashNode<T> Node;
+			template<class K, class T, class KeyOfValue, class HashFunc>
+			friend class HashTableIterator;
+		public:
+			typedef HashTableIterator<K, T, KeyOfValue, HashFunc> Iterator;
+
+			HashTable()
 			{
-				_table[index] = cur->_pNext;
-				delete cur;
-				return true;
+				_table.resize(10, nullptr);
+				_size = 0;
 			}
-			PNode pre = _table[index];
-			cur = cur->_pNext;
-			while (cur)
+			~HashTable()
 			{
-				if (kof(cur->_data) == data)
+				for (int i = 0; i < _table.size(); i++)
 				{
-					pre->_pNext = cur->_pNext;
-					delete cur;
-					return true;
+					Node* cur = _table[i];
+					while (cur)
+					{
+						Node* pre = cur;
+						cur = cur->_next;
+						delete pre;
+					}
+					_table[i] = nullptr;
 				}
-				cur = cur->_pNext;
-				pre = cur;
+				_size = 0;
 			}
-			return false;
-		}
-
-		Node* Find(const K& data)
-		{
-			KeyOfValue kof;
-			size_t index = HashFunc(data);
-			PNode cur = _table[index];
-			while (cur)
+			Iterator begin()
 			{
-				if (kof(cur->_data) == data)
+				for (int i = 0; i < _table.size(); i++)
 				{
-					return cur;
+					if (_table[i])
+						return Iterator(_table[i], this);
 				}
-				cur = cur->_pNext;
+				return end();
 			}
-			return nullptr;
-		}
-		size_t Size()const
-		{
-			return _size;
-		}
-
-		bool Empty()const
-		{
-			return 0 == _size;
-		}
-
-		void Clear()
-		{
-			for (size_t i = 0; i < _table.size(); i++)
+			Iterator end()
 			{
-				Node* cur = _table[i];
+				return Iterator(nullptr, this);
+			}
+			pair<Iterator, bool> Insert(const T& data)
+			{
+				HashFunc hf;
+				KeyOfValue kov;
+				if (Find(kov(data)) != end())
+					return make_pair(Find(kov(data)), false);
+				if (_size >= _table.size())
+				{
+					vector<Node*> newTable(2 * _table.size(), nullptr);
+					_table.swap(newTable);
+					for (int i = 0; i < newTable.size(); i++)
+					{
+						Node* cur = newTable[i];
+						while (cur)
+						{
+							Node* next = cur->_next;
+							size_t index = hf(kov(cur->_data)) % _table.size();
+							newTable[i] = cur->_next;
+							cur->_next = _table[index];
+							_table[index] = cur;
+
+							cur = next;
+						}
+						newTable[i] = nullptr;
+					}
+				}
+				Node* newNode = new Node(data);
+				size_t index = hf(kov(data)) % _table.size();
+				newNode->_next = _table[index];
+				_table[index] = newNode;
+				_size++;
+
+				return make_pair(Iterator(newNode, this), true);
+			}
+			Iterator Find(const K& key)
+			{
+				HashFunc hf;
+				size_t index = hf(key) % _table.size();
+				Node* cur = _table[index];
 				while (cur)
 				{
-					Node* next = cur->_pNext;
-					delete cur;
-					cur = next;
+					if (cur->_data.first == key)
+						return Iterator(cur, this);
+					cur = cur->_next;
 				}
+				return Iterator(nullptr, this);
 			}
-		}
+			bool Erase(const K& key)
+			{
+				HashFunc hf;
+				size_t index = hf(key) % _table.size();
+				Node* cur = _table[index];
+				Node* pre = nullptr;
+				while (cur)
+				{
+					if (cur->_data.first == key)
+					{
+						if (pre)
+							pre->_next = cur->_next;
+						else
+							_table[index] = cur->_next;
+						delete cur;
+						_size--;
+						return true;
+					}
+					pre = cur;
+					cur = cur->_next;
+				}
 
-		size_t BucketCount()const
-		{
-			return _table.capacity();
-		}
+				return false;
+			}
 
-		void Swap(Self& ht)
-		{
-			_table.swap(ht._table);
-			swap(_size, ht._size);
-		}
-
-	private:
-		size_t HashFunc(const V& data)
-		{
-			KeyOfValue kof;
-			return HF()(kof(data)) % _table.capacity();
-		}
-		size_t HashFunc(const K& data)
-		{
-			return data % _table.capacity();
-		}
-
-	private:
-		vector<Node*> _table;
-		size_t _size;      // 哈希表中有效元素的个数
-	};
+		private:
+			vector<Node*> _table;
+			size_t _size;
+		};
+	}
 }
