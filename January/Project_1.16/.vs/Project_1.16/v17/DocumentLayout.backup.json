@@ -5,6 +5,15 @@
     {
       "AbsoluteMoniker": "D:0:0:{DF69DAE8-165F-46FB-B90E-70C0CFB7CB79}|Project_1.16.vcxproj|D:\\Github\\Code_Cpp\\January\\Project_1.16\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DF69DAE8-165F-46FB-B90E-70C0CFB7CB79}|Project_1.16.vcxproj|solutionrelative:test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\26614\\Desktop\\110\\lesson38\\2. Reactor\\Reactor.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\unordered_map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\OpenHash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +23,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Reactor.hpp",
+              "DocumentMoniker": "C:\\Users\\26614\\Desktop\\110\\lesson38\\2. Reactor\\Reactor.hpp",
+              "ToolTip": "C:\\Users\\26614\\Desktop\\110\\lesson38\\2. Reactor\\Reactor.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T07:50:18.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OpenHash.h",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\OpenHash.h",
+              "RelativeDocumentMoniker": "..\\..\\STL\\Hash\\Hash\\OpenHash.h",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\OpenHash.h",
+              "RelativeToolTip": "..\\..\\STL\\Hash\\Hash\\OpenHash.h",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAAF8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T07:20:41.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "unordered_map.h",
+              "DocumentMoniker": "D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\unordered_map.h",
+              "RelativeDocumentMoniker": "..\\..\\STL\\Hash\\Hash\\unordered_map.h",
+              "ToolTip": "D:\\Github\\Code_Cpp\\STL\\Hash\\Hash\\unordered_map.h",
+              "RelativeToolTip": "..\\..\\STL\\Hash\\Hash\\unordered_map.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T07:20:21.373Z"
             },
             {
               "$type": "Document",
@@ -28,7 +71,7 @@
               "RelativeDocumentMoniker": "test.cpp",
               "ToolTip": "D:\\Github\\Code_Cpp\\January\\Project_1.16\\test.cpp",
               "RelativeToolTip": "test.cpp",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBUAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T06:41:55.39Z",
               "EditorCaption": ""

@@ -1,3 +1,2 @@
-﻿  test.cpp
-D:\Github\Code_Cpp\January\Project_1.16\test.cpp(24,4): warning C4101: “b”: 未引用的局部变量
+﻿  LINK : 没有找到 D:\Github\Code_Cpp\January\Project_1.16\x64\Debug\Project_1.16.exe 或上一个增量链接没有生成它；正在执行完全链接
   Project_1.16.vcxproj -> D:\Github\Code_Cpp\January\Project_1.16\x64\Debug\Project_1.16.exe

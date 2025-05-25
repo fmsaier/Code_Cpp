@@ -189,16 +189,6 @@ public:
 	}
 };
 
-int Add(int a, int b)
-{
-	return a + b;
-}
-
-short Add(int a, int b)
-{
-	return a + b;
-}
-
 int main()
 {
 	vector<int> arr = { 4,6,9,2,45,18,61,4,8412,5,464,31,15 };

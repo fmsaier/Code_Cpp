@@ -1,0 +1,48 @@
+﻿  test.cpp
+D:\Github\Code_Cpp\April\Project_4.2\test.cpp(218,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2035,23): error C2683: “dynamic_cast”:“A”不是多态类型
+  (编译源文件“test.cpp”)
+      D:\Github\Code_Cpp\April\Project_4.2\test.cpp(230,7):
+      参见“A”的声明
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2035,23):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\Github\Code_Cpp\April\Project_4.2\test.cpp(257,13):
+          查看对正在编译的函数 模板 实例化“std::shared_ptr<B> std::dynamic_pointer_cast<B,A>(const std::shared_ptr<A> &) noexcept”的引用
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2035,16): error C2737: “_Ptr”: 必须初始化 const 对象
+  (编译源文件“test.cpp”)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2037,9): error C3536: “_Ptr”: 初始化之前无法使用
+  (编译源文件“test.cpp”)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2038,32): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“std::shared_ptr<B>”
+  (编译源文件“test.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2038,32):
+      “std::shared_ptr<B>::shared_ptr”: 函数不接受 2 个参数
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1668,5):
+          可能是“std::shared_ptr<B>::shared_ptr(std::unique_ptr<_Ux,_Dx> &&)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1657,5):
+          或    “std::shared_ptr<B>::shared_ptr(std::auto_ptr<_Other> &&)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1649,5):
+          或    “std::shared_ptr<B>::shared_ptr(const std::weak_ptr<_Ty2> &)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1644,5):
+          或    “std::shared_ptr<B>::shared_ptr(std::shared_ptr<_Ty2> &&) noexcept”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1634,5):
+          或    “std::shared_ptr<B>::shared_ptr(const std::shared_ptr<_Ty2> &) noexcept”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1624,5):
+          或    “std::shared_ptr<B>::shared_ptr(std::shared_ptr<_Ty2> &&,B *) noexcept”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1618,5):
+          或    “std::shared_ptr<B>::shared_ptr(const std::shared_ptr<_Ty2> &,B *) noexcept”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1613,5):
+          或    “std::shared_ptr<B>::shared_ptr(std::nullptr_t,_Dx,_Alloc)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1607,5):
+          或    “std::shared_ptr<B>::shared_ptr(std::nullptr_t,_Dx)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1601,5):
+          或    “std::shared_ptr<B>::shared_ptr(_Ux *,_Dx,_Alloc)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1593,5):
+          或    “std::shared_ptr<B>::shared_ptr(_Ux *,_Dx)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(1579,5):
+          或    “std::shared_ptr<B>::shared_ptr(_Ux *)”
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\memory(2038,32):
+          尝试匹配参数列表“(const std::shared_ptr<A>, int)”时
+  
